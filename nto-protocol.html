@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Novum Trust Order - NTO Protocol</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+
+<!-- Bootstrap & Jquery -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+<!-- Fonts & FontAwesome -->
+<link href="https://fonts.googleapis.com/css?family=Poppins:300,600" rel="stylesheet">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+<link href="style.css" rel="stylesheet" type="text/css" />
+<link href="animate.css" rel="stylesheet" type="text/css" />
+<link href="magnific-popup.css" rel="stylesheet">
+<link href="sidemenu.css" rel="stylesheet">
+<link href="media-queries.css" rel="stylesheet">
+<link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
+
+<!-- Scrollmagic -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/TimelineMax.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>
+
+<!-- Add sidemenu -->
+<script>
+(function($){
+	// Menu Functions
+	$(document).ready(function(){
+  	$('#menuToggle').click(function(e){
+    	var $parent = $(this).parent('nav');
+      $parent.toggleClass("open");
+      var navState = $parent.hasClass('open') ? "hide" : "show";
+      $(this).attr("title", navState + " navigation");
+			// Set the timeout to the animation length in the CSS.
+			setTimeout(function(){
+				console.log("timeout set");
+				$('#menuToggle > span').toggleClass("navClosed").toggleClass("navOpen");
+			}, 200);
+    	e.preventDefault();
+  	});
+  });
+})(jQuery);
+
+</script>
+
+</head>
+
+<body>
+
+<header>
+  <div class="container">
+    <a href="index.html"><div id="logo"><img src="img/logo.png" alt=""></div></a>
+    <ul id="menu">
+      <li><a href="nto-protocol.html">NTO Protocol</a></li>
+      <li><a href="tokens.html">Tokens</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <nav> 
+      <a href="" id="menuToggle" title="show menu"><span class="navClosed"></span></a> 
+      <a href="nto-protocol.html">NTO Protocol</a>
+      <a href="tokens.html" >Tokens</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+  <!------------ Banner start ------------>
+<div class="inner-banner">
+  <div id="galaxy-innerbg"></div>
+  <div class="container">
+    <h1>What is<br>NTO Protocol</h1>
+  </div>
+</div>
+<!------------ Banner end ------------>
+<section style="padding-top:0;">
+  <div class="container">
+    <div class="smaller-container bg-decentralised">
+      <h3 class="wow fadeInUp" data-wow-delay="0.3s">A decentralised application created for, but not limited to, the entire crowdfunding process in the cryptocurrency landscape.</h3>
+      <br><br><br>
+      <h3 class="wow fadeInUp" data-wow-delay="0.6s">Type II DApp facilitated on the Ethereum network with NOVUM tokens.</h3>
+      <div id="trigger1"></div>
+      <div id="animate1" class="graphic-about">
+        <img src="img/graphic-about.png" alt="">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="application">
+  <div class="container">
+    <h2>Application</h2>
+    <br><br><br>
+    <div class="row">
+      <div class="col-lg-6 col-md-6 v-pad">
+        <img src="img/graphic-duediligence.png" alt="">
+      </div>
+      <div class="col-lg-6 col-md-6 v-pad app-info">
+        <h4 class="wow fadeInUp" data-wow-delay="0.3s">Due Diligence</h4>
+        <br>
+        <p class="wow fadeInUp" data-wow-delay="0.3s">Compete due diligence and vet authenticity of new projects.</p>
+        <p class="wow fadeInUp" data-wow-delay="0.3s">Help community to identify scam projects.</p>
+      </div>
+    </div>
+    <br><br>
+    <div class="row">
+      <div class="col-lg-6 col-md-6 v-pad">
+        <img src="img/graphic-peoplesfavourite.png" alt="">
+      </div>
+      <div class="col-lg-6 col-md-6 v-pad app-info">
+        <h4 class="wow fadeInUp" data-wow-delay="0.3s">People's Favourite</h4>
+        <br>
+        <p class="wow fadeInUp" data-wow-delay="0.3s">Sick of small but promising projects being under-appreciated?</p>
+        <p class="wow fadeInUp" data-wow-delay="0.3s">Vote for your favourite projects to gain visibility.</p>
+      </div>
+    </div>
+    <br><br>
+    <div class="row">
+      <div class="col-lg-6 col-md-6 v-pad">
+        <img src="img/graphic-governance.png" alt="">
+      </div>
+      <div class="col-lg-6 col-md-6 v-pad app-info">
+        <h4 class="wow fadeInUp" data-wow-delay="0.3s">Governance and Fund Release</h4>
+        <br>
+        <p class="wow fadeInUp" data-wow-delay="0.3s">Verify project milestones’ completion.</p>
+        <p class="wow fadeInUp" data-wow-delay="0.3s">Vote for fund disbursement to projects per achievement.</p>
+      </div>
+    </div>
+    <br><br>
+    <div class="row">
+      <div class="col-lg-6 col-md-6 v-pad"></div>
+      <div class="col-lg-6 col-md-6 v-pad app-info">
+        <h4 class="wow fadeInUp" data-wow-delay="0.6s">and many more...</h4>
+      </div>
+    </div>
+  </div>
+</section>
+<section style="overflow-x: hidden;">
+  <div class="container">
+    <h2>Open Source Git</h2>
+    <br><br><br>
+    <div class="row wow fadeInUp" data-wow-delay="0.6s;">
+      <div class="col-lg-2 col-md-1 git-extra-col">
+        <div class="git-graph-l"><img src="img/git-graphic-left.png" alt=""></div>
+      </div>
+      <div class="col-lg-8 col-md-10 col-sm-12 col-12">
+        <div class="git-code">
+          <p>pragma solidity ^0.4.22;</p>
+          <br>
+          <p>contract SimpleBank {</p>
+          <p class="git-indent">uint8 private clientCount;</p>
+          <p class="git-indent">mapping (address => uint) private balances;</p>
+          <p class="git-indent">address public owner;</p>
+          <p>// Log the event about a deposit being made by an address and its amount event </p>
+          <p>LogDepositMade(address indexed accountAddress, uint amount);</p>
+          <br>
+          <p>// Constructor is “payable” so it can receive the initial funding of 30,</p>
+          <p>// required to reward the first 3 clients constructor() public payable {</p>
+          <p class="git-indent">require(msg.value == 30 ether, “30 ether initial funding required”);</p>
+          <p class="git-indent">/* Set the owner to the creator of this contract */</p>
+          <p class="git-indent">owner = msg.sender;</p>
+          <p class="git-indent">clientCount = 0;</p>
+          <p>}</p>
+          <br>
+          <p>/// @notice Enroll a customer with the bank,</p>
+          <p>/// giving the first 3 of them 10 ether as reward</p>
+          <p>/// @return The balance of the user after enrolling function enroll() public returns (uint) {</p>
+          <p class="git-indent">if (clientCount < 3) {</p>
+          <p class="git-indent2">clientCount++</p>
+          <p class="git-indent2">balances[msg.sender] = 10 ether;</p>
+          <br>
+          <p>/// @notice Enroll a customer with the bank,</p>
+          <p>/// giving the first 3 of them 10 ether as reward</p>
+          <p>/// @return The balance of the user after enrolling function enroll() public returns (uint) {</p>
+          <p class="git-indent">if (clientCount < 3) {</p>
+          <p class="git-indent">clientCount++;</p>
+          <p class="git-indent">balances[msg.sender] = 10 ether;</p>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-1 git-extra-col">
+        <div class="git-graph-r"><img src="img/git-graphic-right.png" alt=""></div>
+      </div>
+    </div>
+    <div class="smaller-container wow fadeInUp" data-wow-delay="0.6s;">
+      <div class="row">
+        <div class="col-lg-6 col-md-6 v-pad">
+          <a href="" class="cta-link">
+            <div class="cta-col wow fadeInUp" data-wow-delay="0.6s">
+              <img src="img/graphic-joingit.png" alt="">
+              <br><br>
+              <p>JOIN THE GIT</p>
+            </div>
+          </a>
+        </div>
+        <div class="col-lg-6 col-md-6 v-pad">
+          <a href="" class="cta-link">
+            <div class="cta-col wow fadeInUp" data-wow-delay="0.9s">
+              <img src="img/graphic-applyaspartner.png" alt="">
+              <br><br>
+              <p>APPLY AS PARTNER</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="container">
+    <p class="small-font">Platforms</p>
+    <br><br>
+    <div class="row partners">
+      <div class="col-lg-2 col-md-2 col-4 v-pad"><img src="img/media-partners/media-1.jpg" alt=""></div>
+      <div class="col-lg-2 col-md-2 col-4 v-pad"><img src="img/media-partners/media-2.jpg" alt=""></div>
+      <div class="col-lg-2 col-md-2 col-4 v-pad"><img src="img/media-partners/media-3.jpg" alt=""></div>
+      <div class="col-lg-2 col-md-2 col-4 v-pad"><img src="img/media-partners/media-4.jpg" alt=""></div>
+      <div class="col-lg-2 col-md-2 col-4 v-pad"><img src="img/media-partners/media-5.jpg" alt=""></div>
+      <div class="col-lg-2 col-md-2 col-4 v-pad"><img src="img/media-partners/media-6.jpg" alt=""></div>
+      <div class="col-lg-2 col-md-2 col-4 v-pad"><img src="img/media-partners/media-7.jpg" alt=""></div>
+      <div class="col-lg-2 col-md-2 col-4 v-pad"><img src="img/media-partners/media-8.jpg" alt=""></div>
+      <div class="col-lg-2 col-md-2 col-4 v-pad"><img src="img/media-partners/media-9.jpg" alt=""></div>
+      <div class="col-lg-2 col-md-2 col-4 v-pad"><img src="img/media-partners/media-10.jpg" alt=""></div>
+      <div class="col-lg-2 col-md-2 col-4 v-pad"><img src="img/media-partners/media-11.jpg" alt=""></div>
+      <div class="col-lg-2 col-md-2 col-4 v-pad"><img src="img/media-partners/media-12.jpg" alt=""></div>
+    </div>
+    <br><br><br>
+    <a href="" class="btn wow fadeInUp" data-wow-delay="0.6s;">apply as platforms</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="copyright"><a href="index.html"><img src="img/logo-footer.png" alt=""></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;© 2019 Novum Capital.</div>  
+    <ul class="social">
+      <li><a href=""><i class="fab fa-facebook-f"></i></a></li>
+      <li><a href=""><i class="fab fa-twitter"></i></a></li>
+      <li><a href=""><i class="fab fa-telegram-plane"></i></a></li>
+      <li><a href=""><i class="fab fa-github-alt"></i></i></li>
+      <li><a href=""><i class="fab fa-linkedin-in"></i></a></li>
+      <li><a href=""><i class="fab fa-medium-m"></i></a></li>
+    </ul>
+  </div>
+</footer>
+
+<div class="fixed-btn">
+  <a href="NTO-whitepaper.pdf" target="_blank" class="btn white-btn">whitepaper</a> &nbsp;&nbsp;&nbsp;<a href="" target="_blank" class="btn white-btn">buy tokens</a>
+</div>
+
+
+<script>
+
+var controller = new ScrollMagic.Controller();
+ 
+ var scene1 = new ScrollMagic.Scene({
+     triggerElement: "#trigger",
+     duration: 1500// controlled by scroll pixels of vertical scroll
+     //duration: window.outerWidth
+ })
+     .setTween("#stripe", 1, {
+         right: window.innerWidth,
+         }) // trigger a TweenMax.to tween
+    
+ 
+     .addIndicators() // add indicators (requires plugin)
+     .addTo(controller);
+
+var scene2 = new ScrollMagic.Scene({
+     triggerElement: "#trigger",
+     duration: 1500// controlled by scroll pixels of vertical scroll
+     //duration: window.outerWidth
+ })
+     
+     .setTween("#stripe2", 1, {
+         left: window.innerWidth,
+         })
+ 
+     .addIndicators() // add indicators (requires plugin)
+     .addTo(controller);
+
+var scene3 = new ScrollMagic.Scene({
+							triggerElement: "#trigger1"
+						})
+						.setTween("#animate1", 0.5, {scale: 2.5}) // trigger a TweenMax.to tween
+						.addIndicators({name: "1 (duration: 0)"}) // add indicators (requires plugin)
+            .addTo(controller);
+
+</script>
+  
+</script>
+
+
+<!-- Apply class change on window scroll --> 
+<script>
+    $(window).scroll(function() {
+      var addRemClass = $(window).scrollTop() > 0 ? 'addClass' : 'removeClass';
+        $("header")[addRemClass]('bgChange');
+    });
+</script>    
+
+<!-- Add magnifique popup --> 
+<script src="js/jquery.magnific-popup.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('.open-popup-link').magnificPopup({
+  type:'inline',
+  midClick: true,
+  mainClass: 'mfp-fade' // allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source.
+  
+});
+		
+    });
+</script>
+
+<!-- Animate element -->
+<script src="js/wow.js"></script>
+<script>
+new WOW().init();
+</script>
+
+    
+
+</body>
+</html>

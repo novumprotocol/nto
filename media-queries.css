@@ -1,0 +1,174 @@
+@charset "UTF-8";
+/* CSS Document */
+
+@media (max-width: 1400px) {
+
+
+
+}
+
+@media (max-width: 1200px) {
+
+
+}
+
+@media (max-width: 991px) {
+
+.small-container {
+    width:100%;
+    padding:0 15px;
+}
+
+
+@media (max-width: 768px) {
+
+ul#menu {
+	display: none;
+}
+
+body {font-size:13px;}
+h1 {font-size:60px;}
+h2 {font-size:36px;}
+h3 {font-size:24px;}
+h4 {font-size:18px;}
+p {font-size:14px;}
+
+.parallax span {font-size:30px;}
+
+.btn {
+	height:40px;
+	line-height: 40px;
+	padding:0 15px;
+    font-size: 13px;
+    min-width: 125px;
+    width: auto;
+}
+
+.video-intro {
+    width:100%;
+}
+
+.graphic-intro {
+	width:150px;
+}
+
+
+.vertical-stripe {
+	right: -300px;
+	width: 455px;
+	padding-top: 80px;
+}
+
+.vertical-stripe2 {
+	left: -300px;
+	width: 455px;
+	padding-top: 40px;
+}
+
+.token-img img {
+    max-width: 165px;
+}
+
+.vertical-stripe3 {
+	right: -250px;
+	width: 350px;
+	padding-top: 100px;
+}
+
+.vertical-stripe4 {
+	position: absolute;
+	top: 130px;
+	left: -250px;
+	width: 350px;
+	padding-top: 50px;
+}
+
+.vertical-stripe5 {
+	left: -200px;
+	width: 215px;
+	height: 100%;
+	z-index: 500;
+	padding-top: 100px;
+}
+
+.vertical-stripe6 {
+	position: absolute;
+	top: 130px;
+	right: -200px;
+	width: 395px;
+	padding-top: 50px;
+}
+
+.vertical-stripe7 {
+	left: -300px;
+	width: 390px;
+	padding-top: 100px;
+}
+
+.vertical-stripe8 {
+	position: absolute;
+	top: 130px;
+	right: -200px;
+	width: 215px;
+	padding-top: 50px;
+}
+
+ul.social {
+	float: none;
+    margin-top:30px;
+}
+
+ul.social li {
+      margin-left:15px;
+      margin-right: 15px;
+  }
+
+.copyright {float:none;}
+
+.parallax {
+  background-attachment: unset;
+}
+
+.smaller-container {
+	width:100%;
+}
+
+.application info {text-align: center;}
+
+.git-code {
+	padding:20px;
+}
+
+.git-extra-col {display: none;}
+
+.graphic-about {
+	width:130px;
+}
+
+.token-info-r {text-align: center;}
+.token-info-l {text-align: center;}
+
+.coin-left {
+	display: none;
+}
+
+.coin-right {
+	display: none;
+}
+
+.white-popup {
+    padding: 100px 15px 40px 15px !important;
+}
+
+}
+
+@media (max-width: 480px) {	
+
+#logo {
+    width: 145px;
+    height: auto;
+}
+
+
+}
+

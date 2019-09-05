@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Novum Trust Order - Tokens</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+
+<!-- Bootstrap & Jquery -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+<!-- Fonts & FontAwesome -->
+<link href="https://fonts.googleapis.com/css?family=Poppins:300,600" rel="stylesheet">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+<link href="style.css" rel="stylesheet" type="text/css" />
+<link href="animate.css" rel="stylesheet" type="text/css" />
+<link href="magnific-popup.css" rel="stylesheet">
+<link href="sidemenu.css" rel="stylesheet">
+<link href="media-queries.css" rel="stylesheet">
+<link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
+
+<!-- Scrollmagic -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/TimelineMax.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>
+
+<!-- Add sidemenu -->
+<script>
+(function($){
+	// Menu Functions
+	$(document).ready(function(){
+  	$('#menuToggle').click(function(e){
+    	var $parent = $(this).parent('nav');
+      $parent.toggleClass("open");
+      var navState = $parent.hasClass('open') ? "hide" : "show";
+      $(this).attr("title", navState + " navigation");
+			// Set the timeout to the animation length in the CSS.
+			setTimeout(function(){
+				console.log("timeout set");
+				$('#menuToggle > span').toggleClass("navClosed").toggleClass("navOpen");
+			}, 200);
+    	e.preventDefault();
+  	});
+  });
+})(jQuery);
+
+</script>
+
+</head>
+
+<body>
+
+<header>
+  <div class="container">
+    <a href="index.html"><div id="logo"><img src="img/logo.png" alt=""></div></a>
+    <ul id="menu">
+      <li><a href="nto-protocol.html">NTO Protocol</a></li>
+      <li><a href="tokens.html">Tokens</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <nav> 
+      <a href="" id="menuToggle" title="show menu"><span class="navClosed"></span></a> 
+      <a href="nto-protocol.html">NTO Protocol</a>
+      <a href="tokens.html" >Tokens</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+  <!------------ Banner start ------------>
+<div class="inner-banner">
+  <div id="galaxy-innerbg"></div>
+  <div class="container">
+    <h1>Novum Token<br>Utility</h1>
+  </div>
+</div>
+<!------------ Banner end ------------>
+<section style="padding-top:0;">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 col-md-6 v-pad token-img wow fadeInUp" data-wow-delay="0.3s">
+        <img src="img/graphic-tokenholders.png" alt=""> 
+      </div>
+      <div class="col-lg-6 col-md-6 v-pad token-info-r">
+        <h3 class="wow fadeInUp" data-wow-delay="0.6s">Token Holders</h3>
+        <br>
+        <p class="wow fadeInUp" data-wow-delay="0.9s">Vote for promising projects<br>
+            Participate in TGEs securely<br>
+            Gain early participatory benefits<br>
+            Control project fund disbursements
+        </p>
+      </div>
+    </div>
+    <br><br>
+    <div class="row flex-column-reverse flex-md-row">
+      <div class="col-lg-6 col-md-6 v-pad token-info-l">
+        <h3 class="wow fadeInUp" data-wow-delay="0.6s">Projects</h3>
+        <br>
+        <p class="wow fadeInUp" data-wow-delay="0.9s">Build trust with community<br>
+            List on platforms with verified participants<br>
+            Onboard community onto ecosystem<br>
+            Post-sale governance<br>
+            Access third-party NTO services
+        </p>
+      </div>
+      <div class="col-lg-6 col-md-6 v-pad token-img wow fadeInUp" data-wow-delay="0.3s">
+        <img src="img/graphic-projects.png" alt=""> 
+      </div>
+    </div>
+    <br><br><br>
+    <a href="" class="btn wow fadeInUp" data-wow-delay="0.3s">purchase tokens</a>
+  </div>
+</section>
+
+<section style="overflow:hidden;">
+  <div class="container">
+    <h2>Token Details</h2>
+    <br><br><br>
+    <div class="smaller-container">
+      <div class="token-table wow fadeInUp" data-wow-delay="0.6s">
+        <table>
+          <tr valign="top">
+            <td style="border-top-left-radius:10px;">Token Symbol NVT</td>
+            <td style="border-top-right-radius:10px;">NVT</td>
+          </tr>
+          <tr valign="top">
+            <td>Token Name</td>
+            <td>Novum Token</td>
+          </tr>
+          <tr valign="top">
+            <td>Total Supply</td>
+            <td>100,000,000</td>
+          </tr>
+          <tr valign="top">
+            <td>Tokens for Sale (ordinary)</td>
+            <td>3,000,000</td>
+          </tr>
+          <tr valign="top">
+            <td>Tokens for Sale (preferred)</td>
+            <td>2,000,000<br>(comes with 1 month lock up from listing date)</td>
+          </tr>
+          <tr valign="top">
+            <td>Reserved Tokens</td>
+            <td>95,000,000</td>
+          </tr>
+          <tr valign="top">
+            <td>Reserved Tokens</td>
+            <td>95,000,000</td>
+          </tr>
+          <tr valign="top">
+            <td>Token Price</td>
+            <td>US$1.00 (preferred), US$2.00 (ordinary)</td>
+          </tr>
+          <tr valign="top">
+            <td>Listing Price</td>
+            <td>US$2 - US$3</td>
+          </tr>
+          <tr valign="top">
+            <td>Currencies Accepted</td>
+            <td>USD, BTC, ETH</td>
+          </tr>
+          <tr valign="top">
+            <td>Min. Purchase</td>
+            <td>US$10,000 for Preferred Tokens<br>US$100 for Ordinary Tokens</td>
+          </tr>
+          <tr valign="top">
+            <td>Pre-sale Date</td>
+            <td>ddmmyy</td>
+          </tr>
+          <tr valign="top">
+            <td>Pre-sale Bonus</td>
+            <td>%</td>
+          </tr>
+          <tr valign="top">
+            <td>Public Sale Date</td>
+            <td>ddmmyy</td>
+          </tr>
+          <tr valign="top">
+            <td style="border-bottom-left-radius:10px;">30 Days “Free Look” Period</td>
+            <td style="border-bottom-right-radius:10px;">Toker purchasers may seek a refund of their entire token purchase consideration within 30 days from NVT listing date. However, this entitlement will be negated if the token purchaser has sold or transfer any tokens during the “Free Look” period.</td>
+          </tr>
+        </table>
+        <div class="coin-left wow fadeInUp"><img src="img/token-graphic-left.png" class="vert-move" alt=""></div>
+        <div class="coin-right wow fadeInUp"><img src="img/token-graphic-right.png" class="vert-move2" alt=""></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="novum-tokens">
+  <div class="container">
+    <h2>Utility</h2>
+    <br><br>
+    <div class="row">
+      <div class="col-lg-4 col-md-4 col-6 v-pad wow fadeInUp" data-wow-delay="0.3s">
+        <img src="img/graphic-participation.png" alt="">
+        <br><br>
+        <h4>Investors<br> Participation</h4>
+      </div>
+      <div class="col-lg-4 col-md-4 col-6 v-pad wow fadeInUp" data-wow-delay="0.6s">
+        <img src="img/graphic-project-onboarding.png" alt="">
+        <br><br>
+        <h4>Project<br> Onboarding</h4>
+      </div>
+      <div class="col-lg-4 col-md-4 col-6 v-pad wow fadeInUp" data-wow-delay="0.9s">
+        <img src="img/graphic-project-launch.png" alt="">
+        <br><br>
+        <h4>Project<br> Launch</h4>
+      </div>
+      <div class="col-lg-4 col-md-4 col-6 v-pad wow fadeInUp" data-wow-delay="0.3s">
+        <img src="img/graphic-participatory-benefit.png" alt="">
+        <br><br>
+        <h4>Participatory<br> Benefits</h4>
+      </div>
+      <div class="col-lg-4 col-md-4 col-6 v-pad wow fadeInUp" data-wow-delay="0.6s">
+        <img src="img/graphic-thirdparty.png" alt="">
+        <br><br>
+        <h4>Third-Party Service<br> Onboarding</h4>
+      </div>
+      <div class="col-lg-4 col-md-4 col-6 v-pad wow fadeInUp" data-wow-delay="0.9s">
+        <img src="img/graphic-project-operation.png" alt="">
+        <br><br>
+        <h4>Post-Sale<br> Project Operations</h4>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <p class="small-font">Featured On</p>
+    <br><br>
+    <div class="row partners">
+      <div class="col-lg-2 col-md-2 col-4 v-pad"><img src="img/media-partners/media-1.jpg" alt=""></div>
+      <div class="col-lg-2 col-md-2 col-4 v-pad"><img src="img/media-partners/media-2.jpg" alt=""></div>
+      <div class="col-lg-2 col-md-2 col-4 v-pad"><img src="img/media-partners/media-3.jpg" alt=""></div>
+      <div class="col-lg-2 col-md-2 col-4 v-pad"><img src="img/media-partners/media-4.jpg" alt=""></div>
+      <div class="col-lg-2 col-md-2 col-4 v-pad"><img src="img/media-partners/media-5.jpg" alt=""></div>
+      <div class="col-lg-2 col-md-2 col-4 v-pad"><img src="img/media-partners/media-6.jpg" alt=""></div>
+      <div class="col-lg-2 col-md-2 col-4 v-pad"><img src="img/media-partners/media-7.jpg" alt=""></div>
+      <div class="col-lg-2 col-md-2 col-4 v-pad"><img src="img/media-partners/media-8.jpg" alt=""></div>
+      <div class="col-lg-2 col-md-2 col-4 v-pad"><img src="img/media-partners/media-9.jpg" alt=""></div>
+      <div class="col-lg-2 col-md-2 col-4 v-pad"><img src="img/media-partners/media-10.jpg" alt=""></div>
+      <div class="col-lg-2 col-md-2 col-4 v-pad"><img src="img/media-partners/media-11.jpg" alt=""></div>
+      <div class="col-lg-2 col-md-2 col-4 v-pad"><img src="img/media-partners/media-12.jpg" alt=""></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="copyright"><a href="index.html"><img src="img/logo-footer.png" alt=""></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;© 2019 Novum Capital.</div>  
+    <ul class="social">
+      <li><a href=""><i class="fab fa-facebook-f"></i></a></li>
+      <li><a href=""><i class="fab fa-twitter"></i></a></li>
+      <li><a href=""><i class="fab fa-telegram-plane"></i></a></li>
+      <li><a href=""><i class="fab fa-github-alt"></i></i></li>
+      <li><a href=""><i class="fab fa-linkedin-in"></i></a></li>
+      <li><a href=""><i class="fab fa-medium-m"></i></a></li>
+    </ul>
+  </div>
+</footer>
+
+<div class="fixed-btn">
+  <a href="NTO-whitepaper.pdf" target="_blank" class="btn white-btn">whitepaper</a> &nbsp;&nbsp;&nbsp;<a href="" target="_blank" class="btn white-btn">buy tokens</a>
+</div>
+
+
+<script>
+
+var controller = new ScrollMagic.Controller();
+ 
+ var scene1 = new ScrollMagic.Scene({
+     triggerElement: "#trigger",
+     duration: 1500// controlled by scroll pixels of vertical scroll
+     //duration: window.outerWidth
+ })
+     .setTween("#stripe", 1, {
+         right: window.innerWidth,
+         }) // trigger a TweenMax.to tween
+    
+ 
+     .addIndicators() // add indicators (requires plugin)
+     .addTo(controller);
+
+var scene2 = new ScrollMagic.Scene({
+     triggerElement: "#trigger",
+     duration: 1500// controlled by scroll pixels of vertical scroll
+     //duration: window.outerWidth
+ })
+     
+     .setTween("#stripe2", 1, {
+         left: window.innerWidth,
+         })
+ 
+     .addIndicators() // add indicators (requires plugin)
+     .addTo(controller);
+
+var scene3 = new ScrollMagic.Scene({
+							triggerElement: "#trigger1"
+						})
+						.setTween("#animate1", 0.5, {scale: 2.5}) // trigger a TweenMax.to tween
+						.addIndicators({name: "1 (duration: 0)"}) // add indicators (requires plugin)
+            .addTo(controller);
+
+</script>
+  
+</script>
+
+
+<!-- Apply class change on window scroll --> 
+<script>
+    $(window).scroll(function() {
+      var addRemClass = $(window).scrollTop() > 0 ? 'addClass' : 'removeClass';
+        $("header")[addRemClass]('bgChange');
+    });
+</script>    
+
+<!-- Add magnifique popup --> 
+<script src="js/jquery.magnific-popup.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('.open-popup-link').magnificPopup({
+  type:'inline',
+  midClick: true,
+  mainClass: 'mfp-fade' // allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source.
+  
+});
+		
+    });
+</script>
+
+<!-- Animate element -->
+<script src="js/wow.js"></script>
+<script>
+new WOW().init();
+</script>
+
+    
+
+</body>
+</html>
