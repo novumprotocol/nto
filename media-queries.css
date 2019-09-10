@@ -123,7 +123,8 @@ ul.social li {
       margin-right: 15px;
   }
 
-.copyright {float:none;}
+.copyright {float:none; text-align: center;}
+.terms-privacy {padding-left:0px;}
 
 .parallax {
   background-attachment: unset;
