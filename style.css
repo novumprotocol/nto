@@ -34,7 +34,7 @@ h4 {font-family: AvenirBlack; font-size:24px; color:#fff; padding:0; margin:0; l
 
 .white-text {color:#fff;}
 
-.bold {font-weight: 700;}
+.bold {font-family: AvenirBlack;}
 .light {font-weight: 300;}
 
 .v-pad {padding-top:15px; padding-bottom:15px;}
