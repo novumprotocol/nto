@@ -5,7 +5,7 @@ a {text-decoration: none;  }
 
 
 nav {
-  background-color: rgba(0, 0, 0, 1);
+  background-color: #1b2122;
   height: 200%;
   position: fixed;
   right: -250px;
@@ -30,14 +30,10 @@ nav #menuToggle {
   width: 50px;
 }
 
-nav #menuToggle.bgChange {
-
-}
-
 nav #menuToggle span {
-  background: #fff;
+  background: #848388;
   display: block;
-  height: 10%;
+  height: 2px;
   left: 10%;
   position: absolute;
   top: 45%;
@@ -50,12 +46,12 @@ nav #menuToggle span.black {
 
 nav #menuToggle span:before,
 nav #menuToggle span:after {
-  background: #fff;
+  background: #848388;
   content: '';
   display: block;
   height: 100%;
   position: absolute;
-  top: -250%;
+  top: -350%;
   -moz-transform: rotate(0deg);
   -ms-transform: rotate(0deg);
   -webkit-transform: rotate(0deg);
@@ -68,7 +64,7 @@ nav #menuToggle span.black:after {
   background: #333333;
 }
 
-nav #menuToggle span:after { top: 250%; }
+nav #menuToggle span:after { top: 350%; }
 
 nav a:nth-child(n+2) {
   display: block;
@@ -82,7 +78,7 @@ nav a:nth-child(n+2) {
 nav a:nth-child(n+2):hover {
   text-decoration:none;
   transition:all linear 0.15s;
-  color:#00f5ff;
+  opacity: 0.5;
 }
 
 nav a:nth-child(n+2):after {
@@ -113,7 +109,7 @@ nav a:nth-child(n+2):after {
 
 .open #menuToggle span:before,
 .open #menuToggle span:after {
-  background: #fff;
+  background: #848388;
   top: 0;
   -moz-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
@@ -172,7 +168,7 @@ nav {
 nav #menuToggle {
     height: 30px;
     left: -60px;
-    top: 20px;
+    top: 15px;
     width: 40px;
 }
 

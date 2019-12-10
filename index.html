@@ -8,26 +8,31 @@
     <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
 
 <!-- Bootstrap & Jquery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 
 <!-- Fonts & FontAwesome -->
 <link href="https://fonts.googleapis.com/css?family=Poppins:300,600" rel="stylesheet">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css?family=Work+Sans:100,300,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-<link href="style.css" rel="stylesheet" type="text/css" />
-<link href="animate.css" rel="stylesheet" type="text/css" />
+<link href="animate.css" rel="stylesheet" type="text/css" />  
 <link href="magnific-popup.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+<link href="slick-theme.css" rel="stylesheet">
 <link href="sidemenu.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet" type="text/css" />
 <link href="media-queries.css" rel="stylesheet">
 <link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
 
-<!-- Scrollmagic -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/TimelineMax.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>
+
+<style>
+.slick-slide img {
+    display: inline-block;
+}
+</style>
 
 <!-- Add sidemenu -->
 <script>
@@ -49,485 +54,830 @@
   });
 })(jQuery);
 
+$(function() {
+	  $('#logo a').click(function() {
+		if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+		  var target = $(this.hash);
+		  target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+		  if (target.length) {
+			$('html,body').animate({
+			  scrollTop: target.offset().top
+			}, 1000);
+			return false;
+		  }
+		}
+	  });
+	});
+
 </script>
-
-<style>
-
-    .white-popup {
-      position: relative;
-      background: #000;
-      background-size:100%;
-      width: auto;
-      max-width: 945px;
-      margin: 25px auto;
-      padding: 100px 30px 50px 30px;
-      border-radius: 20px;
-      text-align: center;
-    }
-    
-    .mfp-bg {
-      background: #4b6afd;
-    }
-    .mfp-close-btn-in .mfp-close {
-      color: #eee;
-      top:10px;
-      right:10px;
-    }
-    .mfp-close {
-      font-size: 36px;
-    }
-    
-    </style>
 
 </head>
 
 <body>
 
 <header>
-  <div class="container">
-    <a href="index.html"><div id="logo"><img src="img/logo.png" alt=""></div></a>
-    <ul id="menu">
-      <li><a href="nto-protocol.html">NTO Protocol</a></li>
-      <li><a href="tokens.html">Tokens</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-    <nav> 
-      <a href="" id="menuToggle" title="show menu"><span class="navClosed"></span></a> 
-      <a href="nto-protocol.html">NTO Protocol</a>
-      <a href="tokens.html" >Tokens</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </div>
+  <div id="logo"><a href="#mainbanner"><img src="img/logo.png" alt=""></a></div>
+  <ul id="menu">
+    <li><a href="nto-protocol.html">NTO Protocol</a></li>
+    <li><a href="tokens.html">NVT Tokens</a></li>
+    <li><a href="about.html">About</a></li>
+    <li>
+      <div class="dropdown">
+          <i class="fa fa-globe" style="font-size:14px;"></i> &nbsp;EN &nbsp;<i class="fas fa-angle-down"></i>
+          <div class="dropdown-content">
+            <p><a href="index-zh.html">CN</a></p>
+            <p><a href="index-th.html">TH</a></p>
+          </div>
+        </div>
+    </li>
+  </ul>
+  <nav> 
+    <a href="" id="menuToggle" title="show menu"><span class="navClosed"></span></a> 
+    <a href="nto-protocol.html">NTO Protocol</a>
+    <a href="tokens.html">NVT Tokens</a>
+    <a href="about.html">About</a>
+    <a></a>
+    <div class="dropdown lng-mobile">
+        <i class="fa fa-globe" style="font-size:14px;"></i> &nbsp;EN &nbsp;<i class="fas fa-angle-down"></i>
+      <div class="dropdown-content">
+        <p><a href="index-zh.html">CN</a></p>
+        <p><a href="index-TH.html">TH</a></p>
+      </div>
+    </div>
+  </nav>
 </header>
 
-  <!------------ Home start ------------>
-<div class="main-banner">
-  <div id="galaxy-bg"></div>
-</div>
-<!------------ Home end ------------>
-
-<section style="padding-top:0;">
-  <div class="container" style="text-align: center; position:relative; z-index:300; margin-top: -500px;">
-    <h2 class="wow fadeInUp" data-wow-delay="0.3s">Novum Trust Order <br>Protocol</h2>
-    <h4 class="wow fadeInUp" data-wow-delay="0.6s">Simplifying and structuring blockchain data for greater human readability.</h4>
-    <br><br>
-    <div class="video-intro wow fadeInUp" data-wow-delay="0.9s"><img src="img/video.jpg" alt=""></div>
-  </div>
-  <div class="my-animation-container">
-    <div id="trigger">
-        <div id="stripe" class="vertical-stripe"><h3>Making crypto-fundraising</h3></div>
-        <div id="stripe2" class="vertical-stripe2"><h3>more transparent and accountable.</h3></div>
-    </div>
-  </div>
-  <div class="small-container">
-    <h4 style="font-family: AvenirBook; color:#bbbbbb;">Created for the entire crypto crowdfunding process: from due diligence to projects’ fund disbursement for ICOs and IEOs</h4>
-    <div id="trigger1"></div>
-    <div id="animate1" class="graphic-intro">
-	    <img src="img/graphic-intro.png" alt="">
-    </div>
-  </div>
-</section>
-<section class="nto-protocol">
-  <h2>Using NTO Protocol</h2>
-  <br><br>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-4 col-md-4 v-pad">
-        <img class="wow fadeInUp" data-wow-delay="0.3s" src="img/graphic-duediligence.png" alt="">
-        <br><br>
-        <h4 class="wow fadeInUp" data-wow-delay="0.6s">Due Dilligence</h4>
-        <br>
-        <p class="wow fadeInUp" data-wow-delay="0.6s">Complete due diligence and vet authenticity of new projects.<br>Help community to identify scam projects.</p>
-      </div>
-      <div class="col-lg-4 col-md-4 v-pad">
-        <img class="wow fadeInUp" data-wow-delay="0.6s" src="img/graphic-peoplesfavourite.png" alt="">
-        <br><br>
-        <h4 class="wow fadeInUp" data-wow-delay="0.9s">Community Curation</h4>
-        <br>
-        <p class="wow fadeInUp" data-wow-delay="0.9s">Sick of small but promising projects being under-appreciated?<br>Vote for your favourite projects to gain visibility.</p>
-      </div>
-      <div class="col-lg-4 col-md-4 v-pad">
-        <img class="wow fadeInUp" data-wow-delay="0.9s" src="img/graphic-governance.png" alt="">
-        <br><br>
-        <h4 class="wow fadeInUp" data-wow-delay="1.2s">Governance and Fund Release</h4>
-        <br>
-        <p class="wow fadeInUp" data-wow-delay="1.2s">Verify project milestones completion.<br>Vote on fund disbursement to projects per achievement.</p>
-      </div>
-    </div>
-    <br><br><br>
-    <h4 class="wow fadeInUp" data-wow-delay="1.2s">and others.</h4>
-  </div>
-  </section>
-  <section class="novum-tokens">
-  <h2>Using Novum Tokens</h2>
-  <br><br>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-4 col-md-4 col-6 v-pad wow fadeInUp" data-wow-delay="0.3s">
-        <img src="img/graphic-participation.png" alt="">
-        <br><br>
-        <h4>Investors<br> Participation</h4>
-      </div>
-      <div class="col-lg-4 col-md-4 col-6 v-pad wow fadeInUp" data-wow-delay="0.6s">
-        <img src="img/graphic-project-onboarding.png" alt="">
-        <br><br>
-        <h4>Project<br> Onboarding</h4>
-      </div>
-      <div class="col-lg-4 col-md-4 col-6 v-pad wow fadeInUp" data-wow-delay="0.9s">
-        <img src="img/graphic-project-launch.png" alt="">
-        <br><br>
-        <h4>Project<br> Launch</h4>
-      </div>
-      <div class="col-lg-4 col-md-4 col-6 v-pad wow fadeInUp" data-wow-delay="0.3s">
-        <img src="img/graphic-participatory-benefit.png" alt="">
-        <br><br>
-        <h4>Participatory<br> Benefits</h4>
-      </div>
-      <div class="col-lg-4 col-md-4 col-6 v-pad wow fadeInUp" data-wow-delay="0.6s">
-        <img src="img/graphic-thirdparty.png" alt="">
-        <br><br>
-        <h4>Third-Party Service<br> Onboarding</h4>
-      </div>
-      <div class="col-lg-4 col-md-4 col-6 v-pad wow fadeInUp" data-wow-delay="0.9s">
-        <img src="img/graphic-project-operation.png" alt="">
-        <br><br>
-        <h4>Post-Sale<br> Project Operations</h4>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="parallax">
-  <div class="gradient-black"></div>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-4 col-md-4 col-4 v-pad ">
-        <span>$</span><span class="counter">500</span><span>+</span>
-        <br>
-        <h4>Raised</h4>
-      </div>
-      <div class="col-lg-4 col-md-4 col-4 v-pad">
-        <span class="counter">1583</span><span>+</span>
-        <br>
-        <h4>Projects</h4>
-      </div>
-      <div class="col-lg-4 col-md-4 col-4 v-pad">
-        <span class="counter">1234</span><span>+</span>
-        <br>
-        <h4>investors</h4>
-      </div>
-    </div>
-    <br><br>
-    <ul class="countries wow fadeInUp" data-wow-delay="0.3s">
-      <li class="small-font">Singapore</li>
-      <li class="small-font">&#9679;</li>
-      <li class="small-font">Malaysia</li>
-      <li class="small-font">&#9679;</li>
-      <li class="small-font">Vietnam</li>
-      <li class="small-font">&#9679;</li>
-      <li class="small-font">South Korea</li>
-      <li class="small-font">&#9679;</li>
-      <li class="small-font">Thailand</li>
-      <li class="small-font">&#9679;</li>
-      <li class="small-font">Indonesia</li>
-    </ul>
-  </div>
-  <div class="gradient-black2"></div>
-</div>
-<section>
-  <div class="container">
-    <p class="small-font">Featured On</p>
-    <br><br>
-    <div class="row partners">
-      <div class="col-lg-2 col-md-2 col-4 v-pad"><img src="img/media-partners/media-1.jpg" alt=""></div>
-      <div class="col-lg-2 col-md-2 col-4 v-pad"><img src="img/media-partners/media-2.jpg" alt=""></div>
-      <div class="col-lg-2 col-md-2 col-4 v-pad"><img src="img/media-partners/media-3.jpg" alt=""></div>
-      <div class="col-lg-2 col-md-2 col-4 v-pad"><img src="img/media-partners/media-4.jpg" alt=""></div>
-      <div class="col-lg-2 col-md-2 col-4 v-pad"><img src="img/media-partners/media-5.jpg" alt=""></div>
-      <div class="col-lg-2 col-md-2 col-4 v-pad"><img src="img/media-partners/media-6.jpg" alt=""></div>
-      <div class="col-lg-2 col-md-2 col-4 v-pad"><img src="img/media-partners/media-7.jpg" alt=""></div>
-      <div class="col-lg-2 col-md-2 col-4 v-pad"><img src="img/media-partners/media-8.jpg" alt=""></div>
-      <div class="col-lg-2 col-md-2 col-4 v-pad"><img src="img/media-partners/media-9.jpg" alt=""></div>
-      <div class="col-lg-2 col-md-2 col-4 v-pad"><img src="img/media-partners/media-10.jpg" alt=""></div>
-      <div class="col-lg-2 col-md-2 col-4 v-pad"><img src="img/media-partners/media-11.jpg" alt=""></div>
-      <div class="col-lg-2 col-md-2 col-4 v-pad"><img src="img/media-partners/media-12.jpg" alt=""></div>
-    </div>
-  </div>
-</section>
-<section>
-  <div class="container">
-    <p class="small-font">Partners</p>
-    <br><br>
-    <div class="row partners">
-      <div class="col-lg-2 col-md-2 col-4 v-pad"><img src="img/media-partners/media-1.jpg" alt=""></div>
-      <div class="col-lg-2 col-md-2 col-4 v-pad"><img src="img/media-partners/media-2.jpg" alt=""></div>
-      <div class="col-lg-2 col-md-2 col-4 v-pad"><img src="img/media-partners/media-3.jpg" alt=""></div>
-      <div class="col-lg-2 col-md-2 col-4 v-pad"><img src="img/media-partners/media-4.jpg" alt=""></div>
-      <div class="col-lg-2 col-md-2 col-4 v-pad"><img src="img/media-partners/media-5.jpg" alt=""></div>
-      <div class="col-lg-2 col-md-2 col-4 v-pad"><img src="img/media-partners/media-6.jpg" alt=""></div>
-      <div class="col-lg-2 col-md-2 col-4 v-pad"><img src="img/media-partners/media-7.jpg" alt=""></div>
-      <div class="col-lg-2 col-md-2 col-4 v-pad"><img src="img/media-partners/media-8.jpg" alt=""></div>
-      <div class="col-lg-2 col-md-2 col-4 v-pad"><img src="img/media-partners/media-9.jpg" alt=""></div>
-      <div class="col-lg-2 col-md-2 col-4 v-pad"><img src="img/media-partners/media-10.jpg" alt=""></div>
-      <div class="col-lg-2 col-md-2 col-4 v-pad"><img src="img/media-partners/media-11.jpg" alt=""></div>
-      <div class="col-lg-2 col-md-2 col-4 v-pad"><img src="img/media-partners/media-12.jpg" alt=""></div>
-    </div>
-  </div>
-</section>
-<section>
-  <div class="container">
-    <p class="small-font">Team</p>
-    <br><br>
-    <div class="row">
-      <div class="col-lg-3 col-md-3 col-6 v-pad wow fadeInUp" data-wow-delay="0.3s">
-        <a href="#chris" class="open-popup-link">
-          <div class="team-img"><img src="img/team-chris.jpg" alt=""></div>
-        </a>
-        <div class="team-info">
-          <a href="https://www.linkedin.com/in/christopher-low-570161/" target="_blank" class="team-linkedin"><i class="fab fa-linkedin-in"></i></a>
-          <h4>Chris Low</h4>
-          <p>Chairman</p>
+<!------------ Video banner ------------>
+<div id="mainbanner">
+  <video autoplay muted loop id="myVideo" muted playsinline data-wf-ignore="true" poster="img/video-bg.jpg">
+    <source src="video-bg-720.mp4" type="video/mp4" data-wf-ignore="true">
+    <source src="video-bg-720.webm" type="video/webm" data-wf-ignore="true">
+    Your browser does not support HTML5 video.
+  </video>
+  <div class="content">
+    <div class="container">
+      <div class="row flex-column-reverse flex-lg-row">
+        <div class="col-lg-6 col-md-12 v-pad">
+          <h1>NOVUM TRUST ORDER (NTO)<br>PROTOCOL</h1>
+          <br>
+          <h3 style="line-height:2">“You can't buy a good reputation; you must earn it.”</h3>
+          <p style="color:#848388;">This protocol creates a new standard to better organize blockchain information, and to facilitate a self-regulating blockchain ecosystem whose community builds trust from inside out.</p>
+          <br>
+          <a href="NTO-whitepaper.pdf" target="_blank" class="btn">whitepaper</a> &nbsp;&nbsp;&nbsp;<a href="" target="_blank" class="btn darker-btn">buy tokens</a>
         </div>
-      </div>
-      <div class="col-lg-3 col-md-3 col-6 v-pad wow fadeInUp" data-wow-delay="0.6s">
-        <a href="#irwin" class="open-popup-link">
-          <div class="team-img"><img src="img/team-irwin.jpg" alt=""></div>
-        </a>
-        <div class="team-info">
-          <a href="https://www.linkedin.com/in/irwinchee/" target="_blank" class="team-linkedin"><i class="fab fa-linkedin-in"></i></a>
-          <h4>Irwin Chee</h4>
-          <p>CEO</p>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-3 col-6 v-pad wow fadeInUp" data-wow-delay="0.6s">
-        <a href="#coco" class="open-popup-link">
-          <div class="team-img"><img src="img/team-coco.jpg" alt=""></div>
-        </a>
-        <div class="team-info">
-          <a href="https://www.linkedin.com/in/coco-ong/" target="_blank" class="team-linkedin"><i class="fab fa-linkedin-in"></i></a>
-          <h4>Coco Ong</h4>
-          <p>CMO</p>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-3 col-6 v-pad wow fadeInUp" data-wow-delay="0.9s">
-        <a href="#jonas" class="open-popup-link">
-          <div class="team-img"><img src="img/team-jonas.jpg" alt=""></div>
-        </a>
-        <div class="team-info">
-          <a href="https://www.linkedin.com/in/jonas87/" target="_blank" class="team-linkedin"><i class="fab fa-linkedin-in"></i></a>
-          <h4>Jonas Larsson</h4>
-          <p>Operations Director</p>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-3 col-6 v-pad wow fadeInUp" data-wow-delay="0.3s">
-        <a href="#kim" class="open-popup-link">
-          <div class="team-img"><img src="img/team-kim.jpg" alt=""></div>
-        </a>
-        <div class="team-info">
-          <a href="https://www.linkedin.com/in/kimberley-chang-8195a5140/" target="_blank" class="team-linkedin"><i class="fab fa-linkedin-in"></i></a>
-          <h4>Kimberley Chang</h4>
-          <p>Project Director</p>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-3 col-6 v-pad wow fadeInUp" data-wow-delay="0.6s">
-        <a href="#jordan" class="open-popup-link">
-          <div class="team-img"><img src="img/team-jordan.jpg" alt=""></div>
-        </a>
-        <div class="team-info">
-          <a href="https://www.linkedin.com/in/jordan-ng-90402b142/" target="_blank" class="team-linkedin"><i class="fab fa-linkedin-in"></i></a>
-          <h4>Jordan Ng</h4>
-          <p>Marketing Manager</p>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-3 col-6 v-pad wow fadeInUp" data-wow-delay="0.9s">
-        <a href="#chermaine" class="open-popup-link">
-          <div class="team-img"><img src="img/team-chermaine.jpg" alt=""></div>
-        </a>
-        <div class="team-info">
-          <a href="https://www.linkedin.com/in/chermaine-ng-921694163/" target="_blank" class="team-linkedin"><i class="fab fa-linkedin-in"></i></a>
-          <h4>Ng Chermaine</h4>
-          <p>Marketing Executive</p>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-3 col-6 v-pad wow fadeInUp" data-wow-delay="1.2s">
-        <a href="#tien" class="open-popup-link">
-          <div class="team-img"><img src="img/team-tien.jpg" alt=""></div>
-        </a>
-        <div class="team-info">
-          <a href="https://www.linkedin.com/in/kimberley-chang-8195a5140/" target="_blank" class="team-linkedin"><i class="fab fa-linkedin-in"></i></a>
-          <h4>Tien Lai Trung</h4>
-          <p>CTO</p>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-3 col-6 v-pad wow fadeInUp" data-wow-delay="0.3s">
-        <a href="#praveen" class="open-popup-link">
-          <div class="team-img"><img src="img/team-praveen.jpg" alt=""></div>
-        </a>
-        <div class="team-info">
-          <a href="https://www.linkedin.com/in/praveen-v-0988a6a8" target="_blank" class="team-linkedin"><i class="fab fa-linkedin-in"></i></a>
-          <h4>Praveen Varayalil</h4>
-          <p>Technical Director</p>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-3 col-6 v-pad wow fadeInUp" data-wow-delay="0.6s">
-        <a href="#viet" class="open-popup-link">
-          <div class="team-img"><img src="img/team-viet.jpg" alt=""></div>
-        </a>
-        <div class="team-info">
-          <a href="https://www.linkedin.com/in/hoang-viet-nguyen-978b5067/" target="_blank" class="team-linkedin"><i class="fab fa-linkedin-in"></i></a>
-          <h4>Viet Nguyen</h4>
-          <p>Senior Software Engineer</p>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-3 col-6 v-pad wow fadeInUp" data-wow-delay="0.9s">
-        <a href="#hien" class="open-popup-link">
-          <div class="team-img"><img src="img/team-hien.jpg" alt=""></div>
-        </a>
-        <div class="team-info">
-          <a href="https://www.linkedin.com/in/hien-nguyen-2b431b156/" target="_blank" class="team-linkedin"><i class="fab fa-linkedin-in"></i></a>
-          <h4>Hien Nguyen</h4>
-          <p>Art Director</p>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-3 col-6 v-pad wow fadeInUp" data-wow-delay="1.2s">
-        <a href="#irene" class="open-popup-link">
-          <div class="team-img"><img src="img/team-irene.jpg" alt=""></div>
-        </a>
-        <div class="team-info">
-          <a href="https://www.linkedin.com/in/phuong-anh-nguyen-657757a4/" target="_blank" class="team-linkedin"><i class="fab fa-linkedin-in"></i></a>
-          <h4>Irene Nguyen</h4>
-          <p>Investment Analyst</p>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-3 col-6 v-pad wow fadeInUp" data-wow-delay="0.3s">
-        <a href="#lee" class="open-popup-link">
-          <div class="team-img"><img src="img/team-brandon.jpg" alt=""></div>
-        </a>
-        <div class="team-info">
-          <a href="https://www.linkedin.com/in/brandon-sangsoo-lee-74a91416/" target="_blank" class="team-linkedin"><i class="fab fa-linkedin-in"></i></a>
-          <h4>Lee Sangsoo Brandon</h4>
-          <p>Country Manager, Korea</p>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-3 col-6 v-pad wow fadeInUp" data-wow-delay="0.6s">
-        <a href="#patrick" class="open-popup-link">
-          <div class="team-img"><img src="img/team-patrick.jpg" alt=""></div>
-        </a>
-        <div class="team-info">
-          <a href="https://www.linkedin.com/in/patricktankoontat/" target="_blank" class="team-linkedin"><i class="fab fa-linkedin-in"></i></a>
-          <h4>Patrick Tan</h4>
-          <p>CEO of Novum Hedge Fund and Novum Group General Counsel</p>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-3 col-6 v-pad wow fadeInUp" data-wow-delay="0.9s">
-        <a href="#tony" class="open-popup-link">
-          <div class="team-img"><img src="img/team-tony.jpg" alt=""></div>
-        </a>
-        <div class="team-info">
-          <a href="https://www.linkedin.com/in/tonychew1986/" target="_blank" class="team-linkedin"><i class="fab fa-linkedin-in"></i></a>
-          <h4>Tony Chew</h4>
-          <p>Head of Quantitative Trading</p>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-3 col-6 v-pad wow fadeInUp" data-wow-delay="1.2s">
-        <a href="#nares" class="open-popup-link">
-          <div class="team-img"><img src="img/team-nares.jpg" alt=""></div>
-        </a>
-        <div class="team-info">
-          <a href="https://www.linkedin.com/in/nares-laopannarai-b640b2152/" target="_blank" class="team-linkedin"><i class="fab fa-linkedin-in"></i></a>
-          <h4>Nares Laopannarai</h4>
-          <p>Managing Editor for Novum Media and Country Manager, Thailand</p>
-        </div>
-      </div>
-    </div>
-    <br><br><br>
-    <p class="small-font">Advisor</p>
-    <br><br>
-    <div class="row">
-      <div class="col-lg-3 col-md-3 col-6 v-pad wow fadeInUp" data-wow-delay="0.3s">
-          <a href="#chanhengfai" class="open-popup-link">
-            <div class="team-img"><img src="img/advisor-changhengfai.jpg" alt=""></div>
-          </a>
-          <div class="team-info">
-            <a href="#" target="_blank" class="team-linkedin"><i class="fab fa-linkedin-in"></i></a>
-            <h4>Chang Heng Fai</h4>
-            <p>Business Advisor</p>
+        <div class="col-lg-6 col-md-12 v-pad">
+          <div class="play-wrapper">
+            <a href="https://www.youtube.com/watch?v=od_CUz40EDk" class="play-btn video-pop-up">
+              <div class="play-icon zoom"> <i class="fas fa-play"></i></div>
+              <br><br>
+              <p class="small-font white-text">Play Video</p>
+            </a>
           </div>
         </div>
-        <div class="col-lg-3 col-md-3 col-6 v-pad wow fadeInUp" data-wow-delay="0.6s">
-          <a href="#marionho" class="open-popup-link">
-            <div class="team-img"><img src="img/advisor-marionho.jpg" alt=""></div>
-          </a>
-          <div class="team-info">
-            <a href="#" target="_blank" class="team-linkedin"><i class="fab fa-linkedin-in"></i></a>
-            <h4>Marion Ho</h4>
-            <p>Senior Partner</p>
-          </div>
-        </div>
+      </div>  
     </div>
+  </div>
+  <div class="dark-overlay"></div>
+  <div class="dark-overlay2"></div>
+</div>
+<!------------ Video banner ------------>
+
+<section class="inner-gradient">
+  <div class="container">
+    <div class="h-line h-line-s wow fadeInLeft"><div class="h-dash"></div></div>
+    <div class="h-text wow fadeInLeft" data-wow-delay="0.3s">
+      <h1>Pain Points</h1>
+    </div>
+    <div style="clear:both"></div>
     <br><br><br><br>
     <div class="row">
-      <div class="col-lg-4 col-md-4 v-pad">
-        <a href="" class="cta-link">
-          <div class="cta-col wow fadeInUp" data-wow-delay="0.3s">
-            <img src="img/graphic-buytoken.png" alt="">
-            <br><br>
-            <p>PURCHASE TOKENS</p>
-          </div>
-        </a>
+      <div class="col-lg-4 col-md-4 v-pad wow fadeInUp" data-wow-delay="0.3s">
+        <img src="img/intro-slider1.png" width="520" alt="">
+        <br><br><br><br><br>
+        <h2>Fragmented Blockchain Data</h2>
+        <br>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
       </div>
-      <div class="col-lg-4 col-md-4 v-pad">
-        <a href="" class="cta-link">
-          <div class="cta-col wow fadeInUp" data-wow-delay="0.6s">
-            <img src="img/graphic-joingit.png" alt="">
-            <br><br>
-            <p>JOIN THE GIT</p>
-          </div>
-        </a>
+      <div class="col-lg-4 col-md-4 v-pad wow fadeInUp" data-wow-delay="0.6s">
+        <img src="img/intro-slider2.png" width="520" alt="">
+        <br><br><br><br><br>
+        <h2>Usability</h2>
+        <br>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
       </div>
-      <div class="col-lg-4 col-md-4 v-pad">
-        <a href="" class="cta-link">
-          <div class="cta-col wow fadeInUp" data-wow-delay="0.9s">
-            <img src="img/graphic-applyaspartner.png" alt="">
-            <br><br>
-            <p>APPLY AS PARTNER</p>
-          </div>
-        </a>
+      <div class="col-lg-4 col-md-4 v-pad wow fadeInUp" data-wow-delay="0.9s">
+        <img src="img/intro-slider3.png" width="520" alt="">
+        <br><br><br><br><br>
+        <h2>Governance</h2>
+        <br>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!--
+<section class="inner-gradient">
+  <div class="container">
+    <div class="h-line h-line-r h-line-s wow fadeInRight"><div class="h-dash"></div></div>
+    <div class="h-text h-longtext-r wow fadeInRight" data-wow-delay="0.3s">
+      <h1>Pain Points</h1>
+    </div>
+    <div style="clear:both"></div>
+    <br><br><br><br>
+    <div class="slider slick-slider">
+        <div>
+          <div class="row">
+              <div class="col-lg-7 col-md-7 v-pad" style="text-align:center;">
+                <img src="img/intro-slider1.png" width="520" alt="">
+              </div>
+              <div class="col-lg-4 col-md-4 v-pad" style="text-align:left;">
+                <div class="slidepoint">
+                  <a href="#" data-slide="1"><h2 class="gold-text">Fragmented Blockchain Data</h2></a>
+                  <br>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+                <div class="slidepoint">
+                  <a href="#" data-slide="2"><h2 class="white-text">Usability</h2></a>
+                </div>
+                <div class="slidepoint">
+                  <a href="#" data-slide="3"><h2 class="white-text">Governance</h2></a>
+                </div>
+              </div>  
+            </div>
+        </div>
+        <div>
+          <div class="row">
+              <div class="col-lg-7 col-md-7 v-pad" style="text-align:center;">
+                <img src="img/intro-slider2.png" width="520" alt="">
+              </div>
+              <div class="col-lg-4 col-md-4 v-pad" style="text-align:left;">
+                <div class="slidepoint">
+                  <a href="#" data-slide="1"><h2 class="white-text">Fragmented Blockchain Data</h2></a>
+                </div>
+                <div class="slidepoint">
+                  <a href="#" data-slide="2"><h2 class="gold-text">Usability</h2></a>
+                  <br>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+                <div class="slidepoint">
+                   <a href="#" data-slide="3"><h2 class="white-text">Governance</h2></a>
+                </div>
+              </div>  
+            </div>
+        </div>
+        <div>
+          <div class="row">
+              <div class="col-lg-7 col-md-7 v-pad" style="text-align:center;">
+                <img src="img/intro-slider3.png" width="520" alt="">
+              </div>
+              <div class="col-lg-4 col-md-4 v-pad" style="text-align:left;">
+                <div class="slidepoint">
+                   <a href="#" data-slide="1"><h2 class="white-text">Fragmented Blockchain Data</h2></a>
+                </div>
+                <div class="slidepoint">
+                  <a href="#" data-slide="2"><h2 class="white-text">Usability</h2></a>
+                </div>
+                <div class="slidepoint">
+                  <a href="#" data-slide="3"><h2 class="gold-text">Governance</h2></a>
+                  <br>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+              </div>  
+            </div>
+        </div>
+    </div>
+  </div>
+</section>
+-->
+
+<section>
+  <div class="container">
+    <div class="h-line h-line-s wow fadeInLeft"><div class="h-dash"></div></div>
+    <div class="h-text wow fadeInLeft" data-wow-delay="0.3s">
+      <h1>Features</h1>
+    </div>
+    <div style="clear:both"></div>
+    <br><br><br><br>
+    <div class="row">
+      <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 features-col v-pad wow fadeInUp" data-wow-delay="0.3s">
+        <img src="img/feature-graphic-1.png" wid alt="">
+        <br><br><br>
+        <h2>Authority Score</h2>
+        <br>
+        <p>a measure of reputation; the more transactions a wallet receives, the higher their authority score</p>
+      </div>
+      <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 features-col v-pad wow fadeInUp" data-wow-delay="0.6s">
+        <img src="img/feature-graphic-2.png" alt="">
+        <br><br><br>
+        <h2>Wallet Validator</h2>
+        <br>
+        <p>users with above a certain authority score criteria qualify as validator, and can initiate certain actions</p>
+      </div> 
+      <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 features-col v-pad wow fadeInUp" data-wow-delay="0.9s">
+        <img src="img/feature-graphic-3.png" alt="">
+        <br><br><br>
+        <h2>Governance Model</h2>
+        <br>
+        <p>enabled by NTO smart contracts; consensus governance of milestones & events with quorum requirements</p>
+      </div> 
+      <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 features-col v-pad wow fadeInUp" data-wow-delay="1.2s">
+        <img src="img/feature-graphic-4.png" alt="">
+        <br><br><br>
+        <h2>Moonwalker</h2>
+        <br>
+        <p>a cross-blockchain explorer; interface for users to access blockchain information and NTO protocol applications</p>
+      </div>  
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div style="text-align:center;">
+      <h1>Moonwalker</h1>
+      <p class="small-font">Blockchain Explorer</p>
+    </div>
+    <br><br><br>
+    <div class="wow fadeInUp" data-wow-delay="0.3s">
+      <img src="img/browser-bg.png" alt="">
+      <br>
+      <div class="browser-wrapper">
+        <h1 style="letter-spacing:5px;">Moonwalker Explorer</h1>
+        <br><br><br>
+        <img src="img/moonwalker.png" width="430" alt="">
+        <br>
+        <div class="moonwalker-input">
+          <form>
+            <!--<select>
+              <option>Select</option>
+              <option>Select 1</option>
+            </select>-->
+            <input>
+            <button><i class="fas fa-search"></i></button>
+            <div style="clear:both"></div>
+          </form>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<footer>
+<section>
   <div class="container">
-    <div class="copyright">
-      <a href="index.html"><img src="img/logo-footer.png" alt=""></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;© 2019 Novum Capital.<br><br>
-      <div class="terms-privacy"><a href="#terms" class="open-popup-link">Terms and Conditions</a> &nbsp;&nbsp;I&nbsp;&nbsp; <a href="#privacy" class="open-popup-link">Privacy Policy</a></div>
-    </div>  
-    <ul class="social">
-      <li><a href=""><i class="fab fa-facebook-f"></i></a></li>
-      <li><a href=""><i class="fab fa-twitter"></i></a></li>
-      <li><a href=""><i class="fab fa-telegram-plane"></i></a></li>
-      <li><a href=""><i class="fab fa-github-alt"></i></i></li>
-      <li><a href=""><i class="fab fa-linkedin-in"></i></a></li>
-      <li><a href=""><i class="fab fa-medium-m"></i></a></li>
-    </ul>
+    <div class="h-line h-line-s wow fadeInLeft"><div class="h-dash"></div></div>
+    <div class="h-text wow fadeInLeft" data-wow-delay="0.3s">
+      <h1>Use Cases</h1>
+      <p class="small-font">For Blockchain Users</p>
+    </div>
+    <div style="clear:both"></div>
+    <br><br><br><br>
+    <div class="slider slick-slider2">
+        <div>
+          <div class="row">
+              <div class="col-lg-7 col-md-7 v-pad" style="text-align:center;">
+                <img src="img/nvt-graphic-1.svg" width="450" alt="">
+              </div>
+              <div class="col-lg-4 col-md-4 v-pad" style="text-align:left;">
+                <div class="slidepoint">
+                  <a href="#" data-slide="1"><h2 class="gold-text">General User</h2></a>
+                  <br>
+                  <ul style="padding-left:20px;">
+                    <li><p>Gain confidence and trust when transacting on the blockchain with NTO-scored parties</p></li>
+                    <li><p>Call out on bad actors or fraudulent activities</p></li>
+                    <li><p>Vote for projects you like or events that are happening</p></li>
+                  </ul>
+                </div>
+                <div class="slidepoint">
+                  <a href="#" data-slide="2"><h2 class="white-text">Investor</h2></a>
+                </div>
+                <div class="slidepoint">
+                  <a href="#" data-slide="3"><h2 class="white-text">Project Owner</h2></a>
+                </div>
+                <div class="slidepoint">
+                  <a href="#" data-slide="4"><h2 class="white-text">Third Party App</h2></a>
+                </div>
+                <div class="slidepoint">
+                  <a href="#" data-slide="5"><h2 class="white-text">Crypto Exchange</h2></a>
+                </div>
+              </div>  
+            </div>
+        </div>
+        <div>
+          <div class="row">
+              <div class="col-lg-7 col-md-7 v-pad" style="text-align:center;">
+                <img src="img/intro-slider2.png" width="520" alt="">
+              </div>
+              <div class="col-lg-4 col-md-4 v-pad" style="text-align:left;">
+                <div class="slidepoint">
+                  <a href="#" data-slide="1"><h2 class="white-text">General User</h2></a>
+                </div>
+                <div class="slidepoint">
+                  <a href="#" data-slide="2"><h2 class="gold-text">Investor</h2></a>
+                  <br>
+                  <ul style="padding-left:20px;">
+                    <li><p>Gain confidence and trust when transacting on the blockchain with NTO-scored parties</p></li>
+                    <li><p>Call out on bad actors or fraudulent activities</p></li>
+                    <li><p>Vote for projects you like or events that are happening</p></li>
+                  </ul>
+                </div>
+                <div class="slidepoint">
+                  <a href="#" data-slide="3"><h2 class="white-text">Project Owner</h2></a>
+                </div>
+                <div class="slidepoint">
+                  <a href="#" data-slide="4"><h2 class="white-text">Third Party App</h2></a>
+                </div>
+                <div class="slidepoint">
+                  <a href="#" data-slide="5"><h2 class="white-text">Crypto Exchange</h2></a>
+                </div>
+              </div>  
+            </div>
+        </div>
+        <div>
+          <div class="row">
+              <div class="col-lg-7 col-md-7 v-pad" style="text-align:center;">
+                <img src="img/intro-slider3.png" width="520" alt="">
+              </div>
+              <div class="col-lg-4 col-md-4 v-pad" style="text-align:left;">
+                <div class="slidepoint">
+                  <a href="#" data-slide="1"><h2 class="white-text">General User</h2></a>
+                </div>
+                <div class="slidepoint">
+                  <a href="#" data-slide="2"><h2 class="white-text">Investor</h2></a>
+                </div>
+                <div class="slidepoint">
+                  <a href="#" data-slide="3"><h2 class="gold-text">Project Owner</h2></a>
+                  <br>
+                  <ul style="padding-left:20px;">
+                    <li><p>Gain confidence and trust when transacting on the blockchain with NTO-scored parties</p></li>
+                    <li><p>Call out on bad actors or fraudulent activities</p></li>
+                    <li><p>Vote for projects you like or events that are happening</p></li>
+                  </ul>
+                </div>
+                <div class="slidepoint">
+                  <a href="#" data-slide="4"><h2 class="white-text">Third Party App</h2></a>
+                </div>
+                <div class="slidepoint">
+                  <a href="#" data-slide="5"><h2 class="white-text">Crypto Exchange</h2></a>
+                </div>
+              </div>   
+            </div>
+        </div>
+        <div>
+          <div class="row">
+              <div class="col-lg-7 col-md-7 v-pad" style="text-align:center;">
+                <img src="img/nvt-graphic-1.svg" width="450" alt="">
+              </div>
+              <div class="col-lg-4 col-md-4 v-pad" style="text-align:left;">
+                <div class="slidepoint">
+                  <a href="#" data-slide="1"><h2 class="white-text">General User</h2></a>
+                </div>
+                <div class="slidepoint">
+                  <a href="#" data-slide="2"><h2 class="white-text">Investor</h2></a>
+                </div>
+                <div class="slidepoint">
+                  <a href="#" data-slide="3"><h2 class="white-text">Project Owner</h2></a>
+                </div>
+                <div class="slidepoint">
+                  <a href="#" data-slide="4"><h2 class="gold-text">Third Party App</h2></a>
+                  <br>
+                  <ul style="padding-left:20px;">
+                    <li><p>Gain confidence and trust when transacting on the blockchain with NTO-scored parties</p></li>
+                    <li><p>Call out on bad actors or fraudulent activities</p></li>
+                    <li><p>Vote for projects you like or events that are happening</p></li>
+                  </ul>
+                </div>
+                <div class="slidepoint">
+                  <a href="#" data-slide="5"><h2 class="white-text">Crypto Exchange</h2></a>
+                </div>
+              </div>   
+            </div>
+        </div>
+        <div>
+          <div class="row">
+              <div class="col-lg-7 col-md-7 v-pad" style="text-align:center;">
+                <img src="img/intro-slider3.png" width="520" alt="">
+              </div>
+              <div class="col-lg-4 col-md-4 v-pad" style="text-align:left;">
+                <div class="slidepoint">
+                  <a href="#" data-slide="1"><h2 class="white-text">General User</h2></a>
+                </div>
+                <div class="slidepoint">
+                  <a href="#" data-slide="2"><h2 class="white-text">Investor</h2></a>
+                </div>
+                <div class="slidepoint">
+                  <a href="#" data-slide="3"><h2 class="white-text">Project Owner</h2></a>
+                </div>
+                <div class="slidepoint">
+                  <a href="#" data-slide="4"><h2 class="white-text">Third Party App</h2></a>
+                </div>
+                <div class="slidepoint">
+                  <a href="#" data-slide="5"><h2 class="gold-text">Crypto Exchange</h2></a>
+                  <br>
+                  <ul style="padding-left:20px;">
+                    <li><p>Gain confidence and trust when transacting on the blockchain with NTO-scored parties</p></li>
+                    <li><p>Call out on bad actors or fraudulent activities</p></li>
+                    <li><p>Vote for projects you like or events that are happening</p></li>
+                  </ul>
+                </div>
+              </div>   
+            </div>
+        </div>
+    </div>
+    <!--<div class="row">
+      <div class="col-lg-7 col-md-7 v-pad" style="text-align:center;">
+        <img src="img/nvt-graphic-1.svg" width="450" alt="" class="wow fadeInUp" data-wow-delay="0.3s">
+      </div>
+      <div class="col-lg-5 col-md-5 v-pad wow fadeInUp" data-wow-delay="0.6s">
+        
+        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+      
+          <div class="panel">
+            <div class="panel-heading" role="tab" id="headingOne">
+              <h2 class="panel-title"> <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne"> General User </a> </h2>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+              <div class="panel-body">
+                <ul>
+                  <li><p>Gain confidence and trust when transacting on the blockchain with NTO-scored parties</p></li>
+                  <li><p>Call out on bad actors or fraudulent activities</p></li>
+                  <li><p>Vote for projects you like or events that are happening</p></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel">
+            <div class="panel-heading" role="tab" id="headingTwo">
+              <h2 class="panel-title"> <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo"> Investor </a> </h2>
+            </div>
+            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+              <div class="panel-body">
+                <ul>
+                  <li><p>Gain confidence and trust when transacting on the blockchain with NTO-scored parties</p></li>
+                  <li><p>Call out on bad actors or fraudulent activities</p></li>
+                  <li><p>Vote for projects you like or events that are happening</p></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel">
+            <div class="panel-heading" role="tab" id="headingThree">
+              <h2 class="panel-title"> <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">Project Owner </a> </h2>
+            </div>
+            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+              <div class="panel-body">
+                <ul>
+                  <li><p>Gain confidence and trust when transacting on the blockchain with NTO-scored parties</p></li>
+                  <li><p>Call out on bad actors or fraudulent activities</p></li>
+                  <li><p>Vote for projects you like or events that are happening</p></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel">
+            <div class="panel-heading" role="tab" id="headingFour">
+              <h2 class="panel-title"> <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour"> Third Party App </a> </h2>
+            </div>
+            <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+              <div class="panel-body">
+                <ul>
+                  <li><p>Gain confidence and trust when transacting on the blockchain with NTO-scored parties</p></li>
+                  <li><p>Call out on bad actors or fraudulent activities</p></li>
+                  <li><p>Vote for projects you like or events that are happening</p></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel">
+            <div class="panel-heading" role="tab" id="headingFive">
+              <h2 class="panel-title"> <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive"> Crypto Exchange </a> </h2>
+            </div>
+            <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
+              <div class="panel-body">
+                <ul>
+                  <li><p>Gain confidence and trust when transacting on the blockchain with NTO-scored parties</p></li>
+                  <li><p>Call out on bad actors or fraudulent activities</p></li>
+                  <li><p>Vote for projects you like or events that are happening</p></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+        
+        </div>
+
+    
+      </div>
+    </div>-->
   </div>
+</section>
+
+<section class="black-sec">
+  <div class="container">
+    <div class="h-line h-line-s wow fadeInLeft"><div class="h-dash"></div></div>
+    <div class="h-text wow fadeInLeft" data-wow-delay="0.3s">
+      <h1>Application</h1>
+      <p class="small-font">Examples</p>
+    </div>
+    <div style="clear:both"></div>
+    <br><br><br><br>
+    <div class="row">
+      <div class="col-lg-7 col-md-7 v-pad" style="text-align:center;">
+        <img src="img/concordia-screen.png"  alt="" class="wow fadeInUp" data-wow-delay="0.3s">
+      </div>
+      <div class="col-lg-5 col-md-5 v-pad wow fadeInUp" data-wow-delay="0.6s">
+        <h2>Third Party Application</h2>
+        <h3>Concordia Ventures for Crowdfunding</h3>
+        <br><br>
+        <p>"Where blockchain project owners and crypto enthusiasts come together to materialize innovative projects of the future. Explore verified ICO projects across industries and support them instantly with a secure one-time KYC feature.”</p>
+        <br><br>
+        <h2>User Community</h2>
+        <h3>API for Developers</h3>
+        <br><br>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sed urna erat. Sed efficitur ligula iaculis lacus accumsan elementum. Proin in elit sit amet elementum.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="white-sec">
+  <section style="padding-bottom:0px;">
+    <div class="container">
+      <div class="h-line wow fadeInLeft"><div class="h-dash"></div></div>
+      <div class="h-longtext wow fadeInLeft" data-wow-delay="0.3s">
+        <p class="small-font brown-text">All you need to know about</p>
+        <h1>Novum Global Consultancy</h1>
+      </div>
+      <div style="clear:both"></div>
+      <br><br><br><br>
+      <div class="row" style="text-align:center;">
+        <div class="col-lg-3 col-md-3 col-xs-6 v-pad stats-col wow fadeInUp" data-wow-delay="0.6s">
+          <h1>$200M+</h1>
+          <br>
+          <p class="small-font">Raised for 17 ICO Projects<br>Since 2017</p>
+        </div>
+        <div class="col-lg-3 col-md-3 col-xs-6 v-pad stats-col wow fadeInUp" data-wow-delay="0.9s">
+          <h1>58 Projects</h1>
+          <br>
+          <p class="small-font">Consulted and Led</p>
+        </div>
+        <div class="col-lg-3 col-md-3 col-xs-6 v-pad stats-col wow fadeInUp" data-wow-delay="1.2s">
+          <h1>4.6+ Ratings</h1>
+          <br>
+          <p class="small-font">On Average across projects LED (Icobench)</p>
+        </div>
+        <div class="col-lg-3 col-md-3 col-xs-6 v-pad stats-col wow fadeInUp" data-wow-delay="1.5s">
+          <h1>121.70+</h1>
+          <br>
+          <p class="small-font">Ico success score</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div id="trigger-bg-change">
+    <section>
+      <div class="container">
+        <div class="h-line wow fadeInLeft"><div class="h-dash"></div></div>
+        <div class="h-text wow fadeInLeft" data-wow-delay="0.3s">
+          <p class="small-font brown-text">The Novum Edge</p>
+          <h1>Our Team</h1>
+        </div>
+        <!--<a href="about.html" class="btn about-btn">find out more</a>-->
+        <div style="clear:both"></div>
+        <br><br><br><br>
+        <div class="row" style="text-align:center;">
+          <div class="col-lg-3 col-md-3 col-sm-6 col-6 v-pad wow fadeInUp" data-wow-delay="0.3s">
+            <a href="#chris" class="open-popup-link">
+              <div class="team-img"><img src="img/team-chris.jpg" alt=""></div>
+            </a>
+            <div class="team-info">
+              <a href="https://www.linkedin.com/in/christopher-low-570161/" target="_blank" class="team-linkedin"><i class="fab fa-linkedin-in"></i></a>
+              <h2>Chris Low</h2>
+              <p class="small-font">Chairman</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-3 col-sm-6 col-6 v-pad wow fadeInUp" data-wow-delay="0.6s">
+            <a href="#irwin" class="open-popup-link">
+              <div class="team-img"><img src="img/team-irwin.jpg" alt=""></div>
+            </a>
+            <div class="team-info">
+              <a href="https://www.linkedin.com/in/irwinchee/" target="_blank" class="team-linkedin"><i class="fab fa-linkedin-in"></i></a>
+              <h2>Irwin Chee</h2>
+              <p class="small-font">CEO</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-3 col-sm-6 col-6 v-pad wow fadeInUp" data-wow-delay="0.9s">
+            <a href="#coco" class="open-popup-link">
+              <div class="team-img"><img src="img/team-coco.jpg" alt=""></div>
+            </a>
+            <div class="team-info">
+              <a href="https://www.linkedin.com/in/coco-ong/" target="_blank" class="team-linkedin"><i class="fab fa-linkedin-in"></i></a>
+              <h2>Coco Ong</h2>
+              <p class="small-font">CMO</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-3 col-sm-6 col-6 v-pad wow fadeInUp" data-wow-delay="1.2s">
+            <a href="#jonas" class="open-popup-link">
+              <div class="team-img"><img src="img/team-jonas.jpg" alt=""></div>
+            </a>
+            <div class="team-info">
+              <a href="https://www.linkedin.com/in/jonas87/" target="_blank" class="team-linkedin"><i class="fab fa-linkedin-in"></i></a>
+              <h2>Jonas Larsson</h2>
+              <p class="small-font">Operations Director</p>
+            </div>
+          </div> 
+          <div class="col-lg-3 col-md-3 col-sm-6 col-6 v-pad wow fadeInUp" data-wow-delay="0.3s">
+            <a href="#kim" class="open-popup-link">
+              <div class="team-img"><img src="img/team-kim.jpg" alt=""></div>
+            </a>
+            <div class="team-info">
+              <a href="https://www.linkedin.com/in/kimberley-chang-8195a5140/" target="_blank" class="team-linkedin"><i class="fab fa-linkedin-in"></i></a>
+              <h2>Kimberley Chang</h2>
+              <p class="small-font">Project Director</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-3 col-sm-6 col-6 v-pad wow fadeInUp" data-wow-delay="0.6s">
+            <a href="#jordan" class="open-popup-link">
+              <div class="team-img"><img src="img/team-jordan.jpg" alt=""></div>
+            </a>
+            <div class="team-info">
+              <a href="https://www.linkedin.com/in/jordan-ng-90402b142/" target="_blank" class="team-linkedin"><i class="fab fa-linkedin-in"></i></a>
+              <h2>Jordan Ng</h2>
+              <p class="small-font">Marketing Manager</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-3 col-sm-6 col-6 v-pad wow fadeInUp" data-wow-delay="0.9s">
+            <a href="#chermaine" class="open-popup-link">
+              <div class="team-img"><img src="img/team-chermaine.jpg" alt=""></div>
+            </a>
+            <div class="team-info">
+              <a href="https://www.linkedin.com/in/chermaine-ng-921694163/" target="_blank" class="team-linkedin"><i class="fab fa-linkedin-in"></i></a>
+              <h2>Ng Chermaine</h2>
+              <p class="small-font">Marketing Executive</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-3 col-sm-6 col-6 v-pad wow fadeInUp" data-wow-delay="1.2s">
+            <a href="#tien" class="open-popup-link">
+              <div class="team-img"><img src="img/team-tien.jpg" alt=""></div>
+            </a>
+            <div class="team-info">
+              <a href="https://www.linkedin.com/in/kimberley-chang-8195a5140/" target="_blank" class="team-linkedin"><i class="fab fa-linkedin-in"></i></a>
+              <h2>Tien Lai Trung</h2>
+              <p class="small-font">CTO</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-3 col-sm-6 col-6 v-pad wow fadeInUp" data-wow-delay="0.3s">
+            <a href="#praveen" class="open-popup-link">
+              <div class="team-img"><img src="img/team-praveen.jpg" alt=""></div>
+            </a>
+            <div class="team-info">
+              <a href="https://www.linkedin.com/in/praveen-v-0988a6a8" target="_blank" class="team-linkedin"><i class="fab fa-linkedin-in"></i></a>
+              <h2>Praveen Varayalil</h2>
+              <p class="small-font">Technical Director</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-3 col-sm-6 col-6 v-pad wow fadeInUp" data-wow-delay="0.6s">
+            <a href="#viet" class="open-popup-link">
+              <div class="team-img"><img src="img/team-viet.jpg" alt=""></div>
+            </a>
+            <div class="team-info">
+              <a href="https://www.linkedin.com/in/praveen-v-0988a6a8" target="_blank" class="team-linkedin"><i class="fab fa-linkedin-in"></i></a>
+              <h2>Viet Nguyen</h2>
+              <p class="small-font">Senior Software Engineer</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-3 col-sm-6 col-6 v-pad wow fadeInUp" data-wow-delay="0.9s">
+            <a href="#hien" class="open-popup-link">
+              <div class="team-img"><img src="img/team-hien.jpg" alt=""></div>
+            </a>
+            <div class="team-info">
+              <a href="https://www.linkedin.com/in/hien-nguyen-2b431b156/" target="_blank" class="team-linkedin"><i class="fab fa-linkedin-in"></i></a>
+              <h2>Hien Nguyen</h2>
+              <p class="small-font">Art Director</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-3 col-sm-6 col-6 v-pad wow fadeInUp" data-wow-delay="1.2s">
+            <a href="#irene" class="open-popup-link">
+              <div class="team-img"><img src="img/team-irene.jpg" alt=""></div>
+            </a>
+            <div class="team-info">
+              <a href="https://www.linkedin.com/in/phuong-anh-nguyen-657757a4/" target="_blank" class="team-linkedin"><i class="fab fa-linkedin-in"></i></a>
+              <h2>Irene Nguyen</h2>
+              <p class="small-font">Investment Analyst</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-3 col-sm-6 col-6 v-pad wow fadeInUp" data-wow-delay="0.3s">
+            <a href="#brandon" class="open-popup-link"></a>
+              <div class="team-img"><img src="img/team-brandon.jpg" alt=""></div>
+            </a>
+            <div class="team-info">
+              <a href="https://www.linkedin.com/in/brandon-sangsoo-lee-74a91416/" target="_blank" class="team-linkedin"><i class="fab fa-linkedin-in"></i></a>
+              <h2>Lee Sangsoo Brandon</h2>
+              <p class="small-font">Country Manager, Korea</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-3 col-sm-6 col-6 v-pad wow fadeInUp" data-wow-delay="0.6s">
+            <a href="#patrick" class="open-popup-link"></a>
+              <div class="team-img"><img src="img/team-patrick.jpg" alt=""></div>
+            </a>
+            <div class="team-info">
+              <a href="https://www.linkedin.com/in/patricktankoontat/" target="_blank" class="team-linkedin"><i class="fab fa-linkedin-in"></i></a>
+              <h2>Patrick Tan</h2>
+              <p class="small-font">CEO of Novum Hedge Fund and Novum Group General Counsel</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-3 col-sm-6 col-6 v-pad wow fadeInUp" data-wow-delay="0.9s">
+            <a href="#tony" class="open-popup-link">
+              <div class="team-img"><img src="img/team-tony.jpg" alt=""></div>
+            </a>
+            <div class="team-info">
+              <a href="https://www.linkedin.com/in/tonychew1986/" target="_blank" class="team-linkedin"><i class="fab fa-linkedin-in"></i></a>
+              <h2>Tony Chew</h2>
+              <p class="small-font">Head of Quantitative Trading</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-3 col-sm-6 col-6 v-pad wow fadeInUp" data-wow-delay="1.2s">
+            <a href="#nares" class="open-popup-link">
+              <div class="team-img"><img src="img/team-nares.jpg" alt=""></div>
+            </a>
+            <div class="team-info">
+              <a href="https://www.linkedin.com/in/nares-laopannarai-b640b2152/" target="_blank" class="team-linkedin"><i class="fab fa-linkedin-in"></i></a>
+              <h2>Nares Laopannarai</h2>
+              <p class="small-font">Managing Editor for Novum Media and Country Manager, Thailand</p>
+            </div>
+          </div>
+        </div>
+        <br><br><br><br>
+        <div class="h-line h-line-s wow fadeInLeft"><div class="h-dash"></div></div>
+        <div class="h-text wow fadeInLeft" data-wow-delay="0.3s">
+          <h1>Advisors</h1>
+        </div>
+        <!--<a href="about.html" class="btn about-btn">find out more</a>-->
+        <div style="clear:both"></div>
+        <br><br><br><br>
+        <div class="row" style="text-align:center;">
+          <div class="col-lg-3 col-md-3 col-sm-6 col-6 v-pad wow fadeInUp" data-wow-delay="0.3s">
+            <a href="#chanhengfai" class="open-popup-link">
+              <div class="team-img"><img src="img/advisor-changhengfai.jpg" alt=""></div>
+            </a>
+            <div class="team-info">
+              <a href="#" target="_blank" class="team-linkedin"><i class="fab fa-linkedin-in"></i></a>
+              <h2>Mr Chan Heng Fai</h2>
+              <p class="small-font">Business Advisor</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-3 col-sm-6 col-6 v-pad wow fadeInUp" data-wow-delay="0.6s">
+            <a href="#marionho" class="open-popup-link">
+              <div class="team-img"><img src="img/advisor-marionho.jpg" alt=""></div>
+            </a>
+            <div class="team-info">
+              <a href="#" target="_blank" class="team-linkedin"><i class="fab fa-linkedin-in"></i></a>
+              <h2>Ms Marion Ho</h2>
+              <p class="small-font">Senior Partner</p>
+            </div>
+          </div>
+        </div> 
+      </div>
+    </section>
+  </div>
+</div>
+
+<footer>
+    <div class="copyright">
+      <p class="small-font">Copyright © 2019 Novum Global Ventures Pte Ltd. All Rights Reserved.</p> 
+    </div>  
+    <div class="terms-privacy"><p class="small-font"><a href="#disclaimer" class="open-popup-link">Disclaimer</a> &nbsp;&nbsp;&nbsp;&nbsp;<a href="#terms" class="open-popup-link">Terms and Conditions</a> &nbsp;&nbsp;&nbsp;&nbsp;<a href="#privacy" class="open-popup-link">Privacy Policy</a></p></div>
+    <div style="clear:both"></div>
 </footer>
 
+<div class="social-links">
+    <a href="https://www.facebook.com/wowxtoken/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://twitter.com/WOWXToken" target="_blank"><i class="fab fa-twitter"></i></a>
+    <a href="https://www.linkedin.com/company/wowxtoken/" target="_blank"><i class="fab fa-telegram-plane"></i></a>
+    <a href="http://t.me/WOWXToken" target="_blank"><i class="fab fa-github-alt"></i></a>
+    <a href="https://www.linkedin.com/company/wowxtoken/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+    <a href="https://medium.com/wowxtoken" target="_blank"><i class="fab fa-medium-m"></i></a>
+    
+ </div>
+
 <div class="fixed-btn">
-  <a href="NTO-whitepaper.pdf" target="_blank" class="btn white-btn">whitepaper</a> &nbsp;&nbsp;&nbsp;<a href="" target="_blank" class="btn white-btn">buy tokens</a>
+  <a href="NTO-whitepaper.pdf" target="_blank" class="btn">whitepaper</a> &nbsp;&nbsp;&nbsp;<a href="" target="_blank" class="btn darker-btn">buy tokens</a>
 </div>
 
 <!---------- Team popup ------------> 
 <div id="chris" class="white-popup big-popup mfp-hide sans">
   <div class="team-img team-popup-img"><img src="img/team-chris.jpg" alt=""></div> 
+  <a href="https://www.linkedin.com/in/christopher-low-570161/" target="_blank" class="team-linkedin"><i class="fab fa-linkedin-in"></i></a>
+  <div class="h-line"><div class="h-dash"></div></div>
+  <div class="h-text">
+    <h2>Chris Low</h2>
+    <p class="small-font">Chairman</p> 
+  </div>
+  <div style="clear:both"></div>
   <div class="popup-content">
-    <a href="https://www.linkedin.com/in/christopher-low-570161/" target="_blank" class="team-linkedin"><i class="fab fa-linkedin-in"></i></a>
-    <br><br>
-    <h4>Chris Low</h4>
-    <p class="small-font">Chairman</p>
-    <br><br>
     <p>Mr Low is a seasoned technology entrepreneur for almost 20 years with a track record of building successful technology companies. His first startup called Pendulab was operating as a Software-as-a-Service offering web based collaboration solution. Within a short span of four years, Mr Low had built an incredible sales enterprise which garnered thousands of customers worldwide. Pendulab was subsequently acquired by a leading US-based private equity firm.</p>
     <br><br>
     <p>Mr Low went on to start what was Southeast Asia largest casual game platform, Viwawa, back in 2008. Within two years, Viwawa became the top 100 site for many countries in Southeast Asia, boasting millions of gamers. Seeing a growing trend for fintech, Mr Low embarked on a new venture, SoftPay Mobile, which aims to be the “Square” of Southeast Asia. Within two years, SoftPay Mobile became the largest Mobile Point of Sale company in Vietnam. Mr Low was instrumental in steering SoftPay Mobile to a strategic partnership with Indonesia’s largest bank, Bank Mandiri. Mr Low also successfully raised funds for SoftPay Mobile under Series A.</p>
@@ -538,36 +888,42 @@
 
 <div id="irwin" class="white-popup big-popup mfp-hide sans">
   <div class="team-img team-popup-img"><img src="img/team-irwin.jpg" alt=""></div> 
+  <a href="https://www.linkedin.com/in/irwinchee/" target="_blank" class="team-linkedin"><i class="fab fa-linkedin-in"></i></a>
+  <div class="h-line"><div class="h-dash"></div></div>
+  <div class="h-text">
+    <h2>Irwin Chee</h2>
+    <p class="small-font">CEO</p> 
+  </div>
+  <div style="clear:both"></div>
   <div class="popup-content">
-    <a href="https://www.linkedin.com/in/irwinchee/" target="_blank" class="team-linkedin"><i class="fab fa-linkedin-in"></i></a>
-    <br><br>
-    <h4>Irwin Chee</h4>
-    <p class="small-font">CEO</p>
-    <br><br>
     <p>Starting his career in product development and marketing, Irwin was at i-Sprint Innovations, a security tech firm. During his time, he helped launched more than fourteen products and went through two rounds of acquisitions. He was cofounder at Rimu Group, a venture capital fund which invests across SEA. Irwin was also General Manager responsible for business development and operations at Rockstagvid, a Singaporean video production firm and built 3 hyperlocal media assets.</p>
   </div>
 </div>
 
 <div id="coco" class="white-popup big-popup mfp-hide sans">
   <div class="team-img team-popup-img"><img src="img/team-coco.jpg" alt=""></div> 
+  <a href="https://www.linkedin.com/in/coco-ong/" target="_blank" class="team-linkedin"><i class="fab fa-linkedin-in"></i></a>
+  <div class="h-line"><div class="h-dash"></div></div>
+  <div class="h-text">
+    <h2>Coco Ong</h2>
+    <p class="small-font">CMO</p> 
+  </div>
+  <div style="clear:both"></div>
   <div class="popup-content">
-    <a href="https://www.linkedin.com/in/coco-ong/" target="_blank" class="team-linkedin"><i class="fab fa-linkedin-in"></i></a>
-    <br><br>
-    <h4>Coco Ong</h4>
-    <p class="small-font">CMO</p>
-    <br><br>
     <p>With experience in handling and facilitating events since her undergraduate days, Coco started her career at GaiGai Pte Ltd, the fastest growing dating agency in Singapore, leading an events team and has since organised, marketed and executed over 100 events to date. The Love @ S.E.A.A. event was also featured in a variety show on Mediacorp, a Singaporean broadcasting station in 2017. Moving into content marketing at Paktor Pte Ltd, Coco managed digital content and traditional marketing for the company, as well as influencer marketing which managed to achieve a low CPL comparable to programmatic advertising. Prior to this, Coco graduated from NTU with a Bachelor of Fine Arts in Photography and Digital Imaging.</p>
   </div>
 </div>
 
 <div id="jonas" class="white-popup big-popup mfp-hide sans">
   <div class="team-img team-popup-img"><img src="img/team-jonas.jpg" alt=""></div> 
+  <a href="https://www.linkedin.com/in/jonas87/" target="_blank" class="team-linkedin"><i class="fab fa-linkedin-in"></i></a>
+  <div class="h-line"><div class="h-dash"></div></div>
+  <div class="h-text">
+    <h2>Jonas Larsson</h2>
+    <p class="small-font">Operations Director</p> 
+  </div>
+  <div style="clear:both"></div>
   <div class="popup-content">
-    <a href="https://www.linkedin.com/in/jonas87/" target="_blank" class="team-linkedin"><i class="fab fa-linkedin-in"></i></a>
-    <br><br>
-    <h4>Jonas Larsson</h4>
-    <p class="small-font">Operations Director</p>
-    <br><br>
     <p>Jonas has over 3 years experience in client facing roles as well as in blockchain and cryptocurrency since Bitcoin’s early days.</p>
     <br>
     <p>Previously an Account Director at Black Marketing, he specialised in maximising international C-level clients personal branding, presence, and company brand on LinkedIn. Prior to this, he held a role of an Associate Engineer at TÜV SÜD PSB working in the Electrical & Electronics engineering field. Jonas graduated from RMIT University with Bachelor of Business in Marketing.</p>
@@ -576,24 +932,28 @@
 
 <div id="kim" class="white-popup big-popup mfp-hide sans">
   <div class="team-img team-popup-img"><img src="img/team-kim.jpg" alt=""></div> 
+  <a href="https://www.linkedin.com/in/kimberley-chang-8195a5140/" target="_blank" class="team-linkedin"><i class="fab fa-linkedin-in"></i></a>
+  <div class="h-line"><div class="h-dash"></div></div>
+  <div class="h-text">
+    <h2>Kimberley Chang</h2>
+    <p class="small-font">Project Director</p> 
+  </div>
+  <div style="clear:both"></div>
   <div class="popup-content">
-    <a href="https://www.linkedin.com/in/kimberley-chang-8195a5140/" target="_blank" class="team-linkedin"><i class="fab fa-linkedin-in"></i></a>
-    <br><br>
-    <h4>Kimberley Chang</h4>
-    <p class="small-font">Project Director</p>
-    <br><br>
     <p>She doesn't follow rules but follows dreams. Graduated from NUS with an atypical bachelor degree with honours in Theatre Studies, Kimberley thrives on the imaginative, the dynamic and occasionally the unorthodox. Helming projects and a few years of work dealing with the front end in the service industry has led her to emphasize soft skills in effective communication both as a leader and a teamplayer. She also makes a habit of being efficient and delivering set objectives, sometimes before you expect it.</p>
   </div>
 </div>
 
 <div id="jordan" class="white-popup big-popup mfp-hide sans">
   <div class="team-img team-popup-img"><img src="img/team-jordan.jpg" alt=""></div> 
+  <a href="https://www.linkedin.com/in/jordan-ng-90402b142/" target="_blank" class="team-linkedin"><i class="fab fa-linkedin-in"></i></a>
+  <div class="h-line"><div class="h-dash"></div></div>
+  <div class="h-text">
+    <h2>Jordan Ng</h2>
+    <p class="small-font">Marketing Manager</p> 
+  </div>
+  <div style="clear:both"></div>
   <div class="popup-content">
-    <a href="https://www.linkedin.com/in/jordan-ng-90402b142/" target="_blank" class="team-linkedin"><i class="fab fa-linkedin-in"></i></a>
-    <br><br>
-    <h4>Jordan Ng</h4>
-    <p class="small-font">Marketing Manager</p>
-    <br><br>
     <p>Jordan brings valuable and relevant experience from his prior role at Sakae Fintech as a Marketing Executive. One of the major projects he completed included conceptualising, designing and content writing for two websites.</p>
     <br>
     <p>Jordan graduated from RMIT University with Bachelor of Business in Marketing. Being the captain of the university sports team, Jordan is respected for his tenacity, discipline and for having great camaraderie with his team. His years of experience in a competitive sport as a captain and follower earned him the ideal skills to demonstrate leadership, excellence and the ability to step back.</p>
@@ -602,108 +962,112 @@
 
 <div id="chermaine" class="white-popup big-popup mfp-hide sans">
   <div class="team-img team-popup-img"><img src="img/team-chermaine.jpg" alt=""></div> 
-  <div class="popup-content">
-    <a href="https://www.linkedin.com/in/chermaine-ng-921694163/" target="_blank" class="team-linkedin"><i class="fab fa-linkedin-in"></i></a>
-    <br><br>
-    <h4>Ng Chermaine</h4>
-    <p class="small-font">Marketing Executive</p>
-    <br><br>
-    <p>Chermaine graduated with honours from NUS in Political Science and a keen interest in gender politics. A strategic creative with operational skills, she began her content-creating journey in publishing at Mediacorp Pte Ltd with a leading lifestyle content platform and magazine. Moving into the world of branding, marketing and operations of a start-up e-commerce platform after, Chermaine has experience also in visual story-telling across multiple platforms.</p>
+  <a href="https://www.linkedin.com/in/chermaine-ng-921694163/" target="_blank" class="team-linkedin"><i class="fab fa-linkedin-in"></i></a>
+  <div class="h-line"><div class="h-dash"></div></div>
+  <div class="h-text">
+    <h2>Ng Chermaine</h2>
+    <p class="small-font">Marketing Executive</p> 
   </div>
-</div>
-
-<div id="chermaine" class="white-popup big-popup mfp-hide sans">
-  <div class="team-img team-popup-img"><img src="img/team-chermaine.jpg" alt=""></div> 
+  <div style="clear:both"></div>
   <div class="popup-content">
-    <a href="https://www.linkedin.com/in/chermaine-ng-921694163/" target="_blank" class="team-linkedin"><i class="fab fa-linkedin-in"></i></a>
-    <br><br>
-    <h4>Ng Chermaine</h4>
-    <p class="small-font">Marketing Executive</p>
-    <br><br>
     <p>Chermaine graduated with honours from NUS in Political Science and a keen interest in gender politics. A strategic creative with operational skills, she began her content-creating journey in publishing at Mediacorp Pte Ltd with a leading lifestyle content platform and magazine. Moving into the world of branding, marketing and operations of a start-up e-commerce platform after, Chermaine has experience also in visual story-telling across multiple platforms.</p>
   </div>
 </div>
 
 <div id="tien" class="white-popup big-popup mfp-hide sans">
   <div class="team-img team-popup-img"><img src="img/team-tien.jpg" alt=""></div> 
+  <a href="https://www.linkedin.com/in/lai-trung-tien-1a9148126/" target="_blank" class="team-linkedin"><i class="fab fa-linkedin-in"></i></a>
+  <div class="h-line"><div class="h-dash"></div></div>
+  <div class="h-text">
+    <h2>Tien Lai Trung</h2>
+    <p class="small-font">CTO</p> 
+  </div>
+  <div style="clear:both"></div>
   <div class="popup-content">
-    <a href="https://www.linkedin.com/in/lai-trung-tien-1a9148126/" target="_blank" class="team-linkedin"><i class="fab fa-linkedin-in"></i></a>
-    <br><br>
-    <h4>Tien Lai Trung</h4>
-    <p class="small-font">CTO</p>
-    <br><br>
     <p>Results-oriented software engineer with 4 years’ experience in analysis, design, development and testing. Proficient in a variety of platforms and computing languages such as Swift, Kotlin, Php and Javascript. Skilled at team collaboration while working independently in remote environments.</p>
   </div>
 </div>
 
 <div id="praveen" class="white-popup big-popup mfp-hide sans">
   <div class="team-img team-popup-img"><img src="img/team-praveen.jpg" alt=""></div> 
+  <a href="https://www.linkedin.com/in/praveen-v-0988a6a8" target="_blank" class="team-linkedin"><i class="fab fa-linkedin-in"></i></a>
+  <div class="h-line"><div class="h-dash"></div></div>
+  <div class="h-text">
+    <h2>Praveen Varayalil</h2>
+    <p class="small-font">Technical Director</p> 
+  </div>
+  <div style="clear:both"></div>
   <div class="popup-content">
-    <a href="https://www.linkedin.com/in/praveen-v-0988a6a8" target="_blank" class="team-linkedin"><i class="fab fa-linkedin-in"></i></a>
-    <br><br>
-    <h4>Praveen Varayalil</h4>
-    <p class="small-font">Technical Director</p>
-    <br><br>
     <p>Praveen has had a hands-on experience of 4 years in areas of Laravel framework, API development and JavaScript. Prior to that, Praveen graduated from Anna University Chennai with Masters of Computer Application.</p>
   </div>
 </div>
 
 <div id="viet" class="white-popup big-popup mfp-hide sans">
   <div class="team-img team-popup-img"><img src="img/team-viet.jpg" alt=""></div> 
+  <a href="https://www.linkedin.com/in/hoang-viet-nguyen-978b5067/" target="_blank" class="team-linkedin"><i class="fab fa-linkedin-in"></i></a>
+  <div class="h-line"><div class="h-dash"></div></div>
+  <div class="h-text">
+    <h2>Viet Nguyen</h2>
+    <p class="small-font">Senior Software Engineer</p> 
+  </div>
+  <div style="clear:both"></div>
   <div class="popup-content">
-    <a href="https://www.linkedin.com/in/hoang-viet-nguyen-978b5067/" target="_blank" class="team-linkedin"><i class="fab fa-linkedin-in"></i></a>
-    <br><br>
-    <h4>Viet Nguyen</h4>
-    <p class="small-font">Senior Software Engineer</p>
-    <br><br>
     <p>With 5 years of coding experience, Viet is a code lover experienced in android-based application and back-end web server. Previous expertise accumulated from game porting and system development. Viet also graduated from the School of University of Engineering and Technology (VNU-UET).</p>
   </div>
 </div>
 
 <div id="hien" class="white-popup big-popup mfp-hide sans">
   <div class="team-img team-popup-img"><img src="img/team-hien.jpg" alt=""></div> 
+  <a href="https://www.linkedin.com/in/hien-nguyen-2b431b156/" target="_blank" class="team-linkedin"><i class="fab fa-linkedin-in"></i></a>
+  <div class="h-line"><div class="h-dash"></div></div>
+  <div class="h-text">
+    <h2>Hien Nguyen</h2>
+    <p class="small-font">Art Director</p> 
+  </div>
+  <div style="clear:both"></div>
   <div class="popup-content">
-    <a href="https://www.linkedin.com/in/hien-nguyen-2b431b156/" target="_blank" class="team-linkedin"><i class="fab fa-linkedin-in"></i></a>
-    <br><br>
-    <h4>Hien Nguyen</h4>
-    <p class="small-font">Art Director</p>
-    <br><br>
     <p>Hien studied for 4 years specialising in Information Technology in NEU of Vietnam and eventually attained a Bachelor of MIS. After she graduated, she began working as a UI/ UX Designer at Vinsofts JSC and was promoted to Leader of the company's Design Team after 1 year due to excellent performance in her role. She worked on many projects which involved building multiple websites and even mobile apps. With a keen eye for detail, a strong aesthetic sense and in depth understanding of UI/UX design, Hien is no stranger to the process of creating the best designs possible to suit any needs.</p>
   </div>
 </div>
 
 <div id="irene" class="white-popup big-popup mfp-hide sans">
   <div class="team-img team-popup-img"><img src="img/team-irene.jpg" alt=""></div> 
+  <a href="https://www.linkedin.com/in/phuong-anh-nguyen-657757a4/" target="_blank" class="team-linkedin"><i class="fab fa-linkedin-in"></i></a>
+  <div class="h-line"><div class="h-dash"></div></div>
+  <div class="h-text">
+    <h2>Irene Nguyen</h2>
+    <p class="small-font">Investment Analyst</p> 
+  </div>
+  <div style="clear:both"></div>
   <div class="popup-content">
-    <a href="https://www.linkedin.com/in/phuong-anh-nguyen-657757a4/" target="_blank" class="team-linkedin"><i class="fab fa-linkedin-in"></i></a>
-    <br><br>
-    <h4>Irene Nguyen</h4>
-    <p class="small-font">Investment Analyst</p>
-    <br><br>
     <p>Having begun her career by working as an accountant and administrator for Korean companies, Irene has firm knowledge in Corporate Finance and Human Relations. Irene graduated from the University of Nottingham with a Master's degree in Finance and Investment.Prior to this, she had gained a Bachelor's degree in International Business from Vietnam National University. Irene has strong financial analysing skills with the ability to do some coding in Matlab and Python. Her interest areas of expertise include Venture Capital Investment, Corporate Finance and Derivatives Investment.</p>
   </div>
 </div>
 
 <div id="chanhengfai" class="white-popup big-popup mfp-hide sans">
   <div class="team-img team-popup-img"><img src="img/advisor-changhengfai.jpg" alt=""></div> 
+  <a href="#" target="_blank" class="team-linkedin"><i class="fab fa-linkedin-in"></i></a>
+  <div class="h-line"><div class="h-dash"></div></div>
+  <div class="h-text">
+    <h2>Chan Heng Fai</h2>
+    <p class="small-font">Business Advisor</p> 
+  </div>
+  <div style="clear:both"></div>
   <div class="popup-content">
-    <a href="#" target="_blank" class="team-linkedin"><i class="fab fa-linkedin-in"></i></a>
-    <br><br>
-    <h4>Chan Heng Fai</h4>
-    <p class="small-font">Business Advisor</p>
-    <br><br>
     <p>An accomplished global business veteran of more than 40 years Mr. Chan Heng Fai specializes in financial restructuring and corporate transformation to unlock value and unleash entrepreneurial zeal while managing risk. He has successfully restructured more than 35 corporations in different industries and countries. Some of the remarkable companies that he has built, rescued or transformed include American Pacific Bank (USA), China Gas Holdings Limited and Heng Fai Enterprises Limited both (listed on The Stock Exchange of Hong Kong), Global Med Technologies, Inc. (U.S. medical software company exited for US$60 million), Singhaiyi Group Ltd (listed on the Singapore Exchange).</p>
   </div>
 </div>
 
 <div id="marionho" class="white-popup big-popup mfp-hide sans">
   <div class="team-img team-popup-img"><img src="img/advisor-marionho.jpg" alt=""></div> 
+  <a href="#" target="_blank" class="team-linkedin"><i class="fab fa-linkedin-in"></i></a>
+  <div class="h-line"><div class="h-dash"></div></div>
+  <div class="h-text">
+    <h2>Marion Ho</h2>
+    <p class="small-font">Senior Partner</p> 
+  </div>
+  <div style="clear:both"></div>
   <div class="popup-content">
-    <a href="#" target="_blank" class="team-linkedin"><i class="fab fa-linkedin-in"></i></a>
-    <br><br>
-    <h4>Marian Ho</h4>
-    <p class="small-font">Senior Partner</p>
-    <br><br>
     <p>Marian Ho is a senior partner in the Dentons Rodyk Corporate group. She has broad experience in corporate finance as well as mergers and acquisitions. Her corporate finance work covers rights issues, convertible bonds and notes issues, warrant issues and share option schemes. In terms of mergers and acquisitions, Marian has advised on a range of domestic and cross-border transactions, strategic alliances, share and business acquisitions and divestitures, as well as corporate restructurings.</p>
     <br>
     <p>Marian advises on fund management and collective investment schemes, in particular offers made by offshore funds in Singapore.</p>
@@ -715,110 +1079,68 @@
 
 <!---------- Terms & privacy ------------> 
 <div id="terms" class="white-popup big-popup mfp-hide sans" style="text-align:left;">
-  <h3 style="text-align:center;">Terms and Conditions</h3>
+  <h2>Terms and Conditions</h2>
   <br><br><br>
-  <p class="bold">TERMS OF SERVICES – USER</p>
+  <p class="bold white-text">TERMS OF SERVICES – USER</p>
   <p>This Terms of Service (“Terms”) serves as a legal contract between NOVUM GLOBAL VENTURES PTE. LTD. (“Novum”) and yourself (“You”). By accessing or using any of the services provided by Novum (“Service”) on our Website (“Site”), you agree to the terms and conditions contained within these Terms. If you do not agree to these Terms, do not use the Service.</p>
   <br><br>
-  <p class="bold">INTELLECTUAL PROPERTY RIGHTS</p>
+  <p class="bold white-text">INTELLECTUAL PROPERTY RIGHTS</p>
   <p>Novum owns and retains all rights, title and interest in and to the Services and the Site, including but not limited to all software information, data and Intellectual Property related to the aforementioned. Any reproduction or redistribution of the Service or the Service content is strictly prohibited, and we reserve the right to terminate our Service to you if you were to violate the Terms.</p>
   <br><br>
-  <p class="bold">OUR SERVICES & ITS USAGE</p>
+  <p class="bold white-text">OUR SERVICES & ITS USAGE</p>
   <p>Novum operates the Site to support the Novum Token Sale (“Token Sale”). The Site allows you to purchase Novum Token. Please see the Whitepaper available on the Site for details of the Novum Token. Any sale of Novum Token is subject to the terms and conditions set out in the Whitepaper which can be downloaded from www.novumprotocol.io. You are required to read and understand the Whitepaper, including the terms and conditions, before participating in the Token Sale or purchasing Novum Token. Novum reserves the right to control, manage and/or modify the Whitepaper and the terms and conditions of the Token Sale sold via our Services. As such, you are strongly advised to refer to the latest Whitepaper based on the version number and date. For the avoidance of doubt, Novum is not obliged to notify you of any changes to the Whitepaper.</p>
   <br><br>
-  <p class="bold">THIRD PARTY WEBSITES</p>
+  <p class="bold white-text">THIRD PARTY WEBSITES</p>
   <p>Novum does not exercise any control over any third-party websites or services which may be available on the Site. Therefore, you agree that Novum is not liable for any services provided by the third-party website that you were directed to and you shall be subjected to the terms and conditions of the respective third party. You agree that you will be using the third-party services at your own risk. Hence, Novum will not be liable for any losses, damages, costs or other expenses arising from your use of third party services.</p>
   <br><br>
-  <p class="bold">REGISTERING FOR AN ACCOUNT</p>
+  <p class="bold white-text">REGISTERING FOR AN ACCOUNT</p>
   <p>In order to participate in our Novum Token sales and/or to use Novum services, you may be asked to fill up a form (“Account”) as it is necessary to obtain certain information about you in order to ensure that the purchase of Novum Token by you complies with applicable law or regulation. You may be required to provide certain information and this information shall include and is not limited to your name, email address, nationality, country of residence and relevant supporting documentation. You acknowledge that you shall provide this information as per requested as well as to provide further information promptly upon request to complete the purchase. You also acknowledge that all information provided shall be accurate, current and it is your sole duty to ensure that the information provided shall be updated constantly to keep it accurate, current and complete.</p>
   <br>
   <p class="bold">Novum reserves the right to suspend your registration or refuse your purchase of Novum Token if: (a) we do not receive any information from you that is able to determine that it is permissible to sell Novum Tokens to you under applicable laws and regulations; and/or (b) if it is suspected that information provided by you is inaccurate, not current or incomplete.</p>
   <br><br>
-  <p class="bold">PARTICIPATION TERMINATION</p>
+  <p class="bold white-text">PARTICIPATION TERMINATION</p>
   <p>Novum reserves the right to terminate your participation without prior notice, if you: (i) violate the Terms, or; (ii) use the account for illegal or improper purposes, or; (iii) use the Service for illegal or improper purposes, or; (iv) infringe a third party intellectual property rights. Once your account has been terminated or suspended due to the aforementioned reasons, all benefits and user’s right shall be revoked, and no refund will be granted to you.</p>
   <br><br>
-  <p class="bold">REPRESENTATIONS AND WARRANTIES</p>
+  <p class="bold white-text">REPRESENTATIONS AND WARRANTIES</p>
   <p>You warrant that you will not use our services for any fraudulent, unlawful or abusive purpose.</p>
   <br>
   <p>The content of the Site is provided on an “as-is-where-is” basis without representations or warranties of any kind. Novum makes no warranties or representation about the accuracy or completeness of the content of the Service and the Site and assume no liability or responsibility for any loss, damage, and/or penalty faced by you for using our Services and/or the Site. Novum does not guarantee and is not responsible to perform any verification of information provided by you, the accuracy of your information provided is your sole responsibility.</p>
   <br><br>
-  <p class="bold">NOTICE OF HIGH RISK</p>
+  <p class="bold white-text">NOTICE OF HIGH RISK</p>
   <p>You understand that any purchase of Novum Tokens carries a high risk of losing the entire amount which you paid for the Novum Tokens. Hence, you shall waive all rights to seek any legal remedy on your own or through any class action litigation in order to recover the purchase amount from Novum. Nothing in this Agreement nor any conversation and communication made by Novum, verbal or non-verbal, shall imply a positive or punitive return on investment from the amount you paid for Novum Tokens or that the Tokens will carry forth its intended usage. You further warrants that by losing the entire purchase amount, it will not adversely affect your livelihood, obligations and dependents. For avoidance of doubt, Novum hereby expressedly states to you that the purchase of the Novum Tokens represents a financially high risk activity and that you shall fully bear all losses which may be incurred from this purchase.</p>
   <br><br>
-  <p class="bold">DISCLAIMER</p>
+  <p class="bold white-text">DISCLAIMER</p>
   <p>Novum does not warrant that the Service and/or Site are error free or will operate without interruption or are compatible with all equipment and software configurations. Novum shall not be liable for any loss whatsoever arising from the use of the Service or Site. Novum shall not be responsible for any system failures or other interruptions that may affect your purchase process.</p>
   <br><br>
-  <p class="bold">LIMITATION OF LIABILITY</p>
+  <p class="bold white-text">LIMITATION OF LIABILITY</p>
   <p>Novum shall not be liable to you or any third party under any circumstances (including negligence or breach of statutory duty) or otherwise for any indirect or consequential loss or damage of any kind including punitive or exemplary damages or losses, including but not limited to damages for loss of profits, goodwill, use, data or other intangible losses which may be incurred in connection with Novum or its services and site. Novum shall not be liable for any unauthorised transactions arising from unauthorised, illegal or fraudulent use of the service and site.</p>
   <br><br>
-  <p class="bold">MODIFICATIONS</p>
+  <p class="bold white-text">MODIFICATIONS</p>
   <p>Novum reserves the right, in its sole discretion, to revise or modify these Terms at any time, and you agree to be bound by such revisions or modifications. You are responsible for viewing these Terms periodically. Your continued use of the Site or Service after a change or modification of these Terms will constitute your acceptance of the revised Terms. If you do not agree to the modified Terms, you should refrain from using our Services and the Site.</p>
   <br><br>
-  <p class="bold">GOVERNING LAW AND DISPUTE RESOLUTION</p>
+  <p class="bold white-text">GOVERNING LAW AND DISPUTE RESOLUTION</p>
   <p>The Terms shall be governed by the law of the Republic of Singapore.</p>
   <br>
-  <p>In the event if you do not agree for Novum to process your data, please notify Novum via email at <a href="mailto:hello@novumprotocol.io" style="color:#4b6afd;">hello@novumprotocol.io.</a></p>
+  <p>In the event if you do not agree for Novum to process your data, please notify Novum via email at <a href="mailto:hello@novumprotocol.io" style="color:#caaa56;" class="mail">hello@novumprotocol.io.</a></p>
 </div>
 
 <div id="privacy" class="white-popup big-popup mfp-hide sans" style="text-align:left;">
-  <h3 style="text-align:center;">Privacy Policy</h3>
+  <h2>Privacy Policy</h2>
   <br><br><br>
   <p>By submitting your personal information to us, you consent to such information being used by us for the provision of Novum’s Services (“Service”) and also for us to communicate with you.</p>
   <br>
-  <p>In the event if you do not agree for Novum to process your data, please notify Novum via email at <a href="mailto:hello@novumprotocol.io" style="color:#4b6afd;">hello@novumprotocol.io.</a></p>
+  <p>In the event if you do not agree for Novum to process your data, please notify Novum via email at <a href="mailto:hello@novumprotocol.io" style="color:#caaa56;" class="mail">hello@novumprotocol.io.</a></p>
+</div>
+
+<div id="disclaimer" class="white-popup big-popup mfp-hide sans" style="text-align:left;">
+    <h2>Disclaimer</h2>
+    <br><br><br>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vulputate viverra nisi. Ut tristique, enim non iaculis pellentesque, nunc est vehicula turpis, non tempor neque urna sed ante. Donec sed elit faucibus, porta sapien quis, vehicula libero. Praesent non consectetur neque. Vestibulum posuere in lorem tincidunt efficitur. Nullam euismod dui eu purus consequat scelerisque. In tincidunt dui et ex congue, id vestibulum felis vehicula. Sed gravida, mi non finibus auctor, risus nisi sollicitudin ligula, imperdiet euismod sapien tortor at nunc. Duis tristique id felis sit amet tincidunt. Quisque molestie venenatis tortor sed suscipit. Suspendisse porta feugiat nisi, nec suscipit felis. Morbi tempor, urna nec tincidunt viverra, tellus turpis lacinia enim, et maximus mauris mauris at diam. Duis ac tristique nunc.</p>
+    <br>
+    <p>Donec sem tortor, euismod et vestibulum non, ultricies a mauris. Vestibulum ut lectus et purus lobortis vulputate eget eget mi. Suspendisse sit amet hendrerit justo. Sed laoreet et magna eu lacinia. Nulla eu orci lacinia, tincidunt ante id, eleifend eros. Vestibulum consequat nibh lacus, at congue libero imperdiet eu. Morbi est nisl, tincidunt non ullamcorper eget, auctor ut turpis. Phasellus tempor tristique dui, vel efficitur sem tincidunt non. Ut eget erat non tellus suscipit laoreet sit amet id magna. Fusce suscipit ultrices ligula vel tempus. Ut ac erat sit amet nunc facilisis sagittis. Sed sed ultrices diam, ut suscipit nibh.</a></p>
 </div>
 <!---------- Terms & privacy ------------> 
-
-
-<script>
-
-var controller = new ScrollMagic.Controller();
- 
- var scene1 = new ScrollMagic.Scene({
-     triggerElement: "#trigger",
-     duration: 1500// controlled by scroll pixels of vertical scroll
-     //duration: window.outerWidth
- })
-     .setTween("#stripe", 1, {
-         right: window.innerWidth,
-         }) // trigger a TweenMax.to tween
-    
- 
-     .addIndicators() // add indicators (requires plugin)
-     .addTo(controller);
-
-var scene2 = new ScrollMagic.Scene({
-     triggerElement: "#trigger",
-     duration: 1500// controlled by scroll pixels of vertical scroll
-     //duration: window.outerWidth
- })
-     
-     .setTween("#stripe2", 1, {
-         left: window.innerWidth,
-         })
- 
-     .addIndicators() // add indicators (requires plugin)
-     .addTo(controller);
-
-var scene3 = new ScrollMagic.Scene({
-							triggerElement: "#trigger1"
-						})
-						.setTween("#animate1", 0.5, {scale: 2.5}) // trigger a TweenMax.to tween
-						.addIndicators({name: "1 (duration: 0)"}) // add indicators (requires plugin)
-            .addTo(controller);
-
-</script>
-  
-</script>
-
-
-<!-- Apply class change on window scroll --> 
-<script>
-    $(window).scroll(function() {
-      var addRemClass = $(window).scrollTop() > 0 ? 'addClass' : 'removeClass';
-        $("header")[addRemClass]('bgChange');
-    });
-</script>    
+   
 
 <!-- Add magnifique popup --> 
 <script src="js/jquery.magnific-popup.min.js"></script>
@@ -832,26 +1154,105 @@ var scene3 = new ScrollMagic.Scene({
 });
 		
     });
+
+    $(document).ready(function () {
+        $('.video-pop-up').magnificPopup({
+			type: 'iframe',
+		});
+
+		$('a.gallery').magnificPopup({
+			type: 'image',
+			gallery: {
+				enabled: true,
+				navigateByImgClick: true,
+				preload: [0,1]
+			},
+			image: {
+				titleSrc: 'title',
+				tError: 'The image could not be loaded.',
+			}
+		});
+		
+    });
+
 </script>
+
+
+<!-- Slick slider --> 
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script>
+  $('.slick-slider').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    fade: true,
+    dots: true,
+    autoplay: true,
+    autoplaySpeed: 3000
+  })
+  $('.slick-slider2').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    fade: true,
+    dots: true,
+    autoplay: true,
+    autoplaySpeed: 3000
+  })
+  $('a[data-slide]').click(function(e) {
+   e.preventDefault();
+   var slideno = $(this).data('slide');
+   $('.slick-slider').slick('slickGoTo', slideno - 1);
+   $('.slick-slider2').slick('slickGoTo', slideno - 1);
+ });
+</script>
+
+<!-- Add accordion -->
+<script>
+$(document).ready(function() {
+  $('.collapse.in').prev('.panel-heading').addClass('active');
+  $('#accordion, #bs-collapse')
+    .on('show.bs.collapse', function(a) {
+      $(a.target).prev('.panel-heading').addClass('active');
+    })
+    .on('hide.bs.collapse', function(a) {
+      $(a.target).prev('.panel-heading').removeClass('active');
+    });
+});
+
+</script>
+
 
 <!-- Animate element -->
 <script src="js/wow.js"></script>
 <script>
 new WOW().init();
 </script>
-
-<!-- Counter -->
-<script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
-<script src="js/jquery.counterup.min.js"></script>
-<script>
-    jQuery(document).ready(function( $ ) {
-        $('.counter').counterUp({
-            delay: 10,
-            time: 1000
-        });
-    });
-</script>
     
+<script src="js/jquery.inview.js"></script>
+<script>
+  $("#trigger-bg-change").bind('inview', function(e, isInView) {
+   if(isInView){
+     $('body').addClass('body-white');
+     $('.white-sec').addClass('fadeIn');
+     $('.black-sec').addClass('fadeOut');
+   }else{
+      $('body').removeClass('body-white');
+      $('.white-sec').removeClass('fadeIn');
+      $('.black-sec').removeClass('fadeOut');
+   }
+});
+
+$(window).scroll(function() {
+      var addRemClass = $(window).scrollTop() > 0 ? 'addClass' : 'removeClass';
+        $("header")[addRemClass]('bgChange');
+    });
+$(window).scroll(function() {
+      var addRemClass = $(window).scrollTop() > 0 ? 'addClass' : 'removeClass';
+        $(".fixed-btn")[addRemClass]('appear');
+    });
+    
+</script>
 
 </body>
 </html>
