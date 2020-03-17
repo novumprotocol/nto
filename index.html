@@ -140,9 +140,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="col-lg-6 col-md-12 v-pad">
           <div class="play-wrapper">
             <a href="" class="popup-content">
-              <div class="play-icon zoom"> <i class="fas fa-play"></i></div>
+              <div class="play-icon zoom">
+                <a href="" data-toggle="modal" data-target="#demo-video"><i class="fas fa-play"></i></a>
+              </div>
               <br><br>
-              <p class="small-font white-text">Video Coming Soon.</p>
+              <p class="small-font white-text">Click to watch.</p>
             </a>
           </div>
         </div>
@@ -878,6 +880,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="fixed-btn">
   <a href="NTO-whitepaper.pdf" target="_blank" class="btn">whitepaper</a> &nbsp;&nbsp;&nbsp;<a href="" target="_blank" class="btn darker-btn">buy tokens</a>
 </div>
+
+<!------      Demo video popup -------->
+<div id="demo-video" class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content bg-dark">
+      <div class="modal-body">
+        <video controls="" autoplay muted name="media" width="100%">
+          <source src="nto-video.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ------->
 
 <!---------- Team popup ------------> 
 <div id="chris" class="white-popup big-popup mfp-hide sans">
