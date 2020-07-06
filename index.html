@@ -149,7 +149,36 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </a>
           </div>
         </div>
-      </div>  
+      </div>
+
+        <!-- sg-widget -->
+        <script type="text/javascript" src="https://app.sgwidget.com/js/sg-widget-v2.js"></script>
+
+        <div id="subscribe-modal" class="white-popup mfp-hide sans bg-white" style="width: 40%; padding-top: 40px; border-radius: 10px;">
+            <h1 style="color: #19242A" class="text-center font-weight-bold">SUBSCRIBE</h2>
+            <p style="color: #555555"  class="text-center">Latest updates straight to your inbox</h2>
+          <div style="clear:both"></div>
+          <div class="popup-content">
+            <div class="sendgrid-subscription-widget widget-992" data-emailerror="Please enter a valid email address">
+                  <form class="sg-widget" data-token="ed5ae348c791b878083bdd1bd8d28b0e" onsubmit="return false;">
+                    <div class="row justify-content-center">                      
+                      <input class="sg_email mt-3 border form-control" style="border-radius: 20px; border-color: rgb(198,198,198);" type="email" name="sg_email" placeholder="Your email address" required="required">
+                    </div>
+                    <div class="sg-response"></div>
+                    
+                    <div class="row justify-content-center mt-3">                      
+                      <input type="submit" class="sg-submit-btn btn" id="widget-992" value="Subscribe">
+                    </div>
+                  </form>
+                </div>
+          </div>
+        </div>
+
+
+   
+        <!-- sg-widget-end -->
+
+
     </div>
   </div>
   <div class="dark-overlay"></div>
@@ -863,7 +892,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <div class="fixed-btn">
   <a href="NTO-whitepaper.pdf" target="_blank" class="btn">whitepaper</a> &nbsp;&nbsp;&nbsp;
-  <!-- <a href="" target="_blank" class="btn darker-btn">buy tokens</a> -->
+  <a href="#subscribe-modal" class="btn open-popup-link">Subscribe</button> &nbsp;&nbsp;&nbsp;
 </div>
 
 <!------      Demo video popup -------->
@@ -1313,6 +1342,20 @@ $(document).ready(function() {
     .on('hide.bs.collapse', function(a) {
       $(a.target).prev('.panel-heading').removeClass('active');
     });
+
+            
+    var $window = $(window);
+    function checkWidth() {
+                var windowsize = $window.width();
+                if (windowsize < 1080) {
+                    $("#subscribe-modal").css("width", "80%");
+                } else {
+                    $("#subscribe-modal").css("width", "40%");
+                }
+    }
+    checkWidth();
+    $(window).resize(checkWidth);
+
 });
 
 </script>
@@ -1326,6 +1369,8 @@ new WOW().init();
     
 <script src="js/jquery.inview.js"></script>
 <script>
+
+
   $("#trigger-bg-change").bind('inview', function(e, isInView) {
    if(isInView){
      $('body').addClass('body-white');
